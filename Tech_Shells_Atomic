@@ -1,0 +1,16 @@
+
+[BuildingTypes]
++				= 
+
+[Tech_Shells_Atomic]
+UIName				= Name:Shells_Atomic
+Name				= Atomic Shells
+BuildCat=Tech
+Prerequisite=SUTechCenter,SUAtomicGenerator
+Prerequisite.Negative=Tech_Shells_Atomic
+TechLevel=9
+Owner=Americans,French,Alliance,Russians,Germans,Confederation,Africans,Arabs,British
+Cost=1000
+PowersUpBuilding=SUTechCenter
+PowersUpToLevel=-1
+AIBuildThis=yes
