@@ -1,0 +1,49 @@
+;------------------------------------------------------------------------------
+[BuildingTypes]
++				= TDCosmodrome
+
+;------------------------------------------------------------------------------
+; Sky Bay
+[TDCosmodrome]
+UIName				= Name:Cosmodrome
+Name				= Cosmodrome
+BuildCat			= Tech
+
+;----- Base Attributes -----
+Strength			= 1625
+
+;----- Factory -----
+Factory				= AircraftType
+Helipad				= yes
+
+;----- Procuration -----
+Owner				= LostCosmonauts
+Prerequisite			= NONE						; Can't really have much of a prerequisite, as TD is a skeleton side and this is its only building. 
+Strength			= 3000
+Armor				= steel
+TechLevel			= 9
+Adjacent			= 2
+Sight				= 10
+Owner				= LostCosmonauts
+Cost=1000
+Points=70
+Power=-50
+Powered=true
+Capturable=true
+Sensors=yes
+Crewed=yes
+Explosion=TWLT070,S_BANG48,S_BRNL58,S_CLSN58,S_TUMU60
+DebrisAnims=DBRIS1LG,DBRIS1SM,DBRIS2LG,DBRIS4LG,DBRIS4SM,DBRIS5LG,DBRIS5SM,DBRIS6LG,DBRIS6SM,DBRIS7LG
+MaxDebris=8
+MinDebris=4
+ThreatPosed=0	; This value MUST be 0 for all building addons
+;DamageParticleSystems=SparkSys,SmallGreySSys,BigGreySmokeSys
+DamageSmokeOffset=75, 270, 140
+UnitReload=yes
+AIBasePlanningSide=0 ;gs 0 for Good, 1 for Evil
+AIBuildThis=yes
+NumberOfDocks=4
+HasStupidGuardMode=false
+Spyable=yes
+ImmuneToPsionics=no ; defaults to yes for buildings, no for others
+BuildLimit=1
