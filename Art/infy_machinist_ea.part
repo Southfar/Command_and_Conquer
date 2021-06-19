@@ -1,0 +1,9 @@
+
+; Asian Machinist (Hacker)
+[infy_machinist_ea]
+Cameo=ENGNICON
+AltCameo=ENGNUICO
+Sequence=EngineerSequence
+Crawls=yes
+Remapable=yes
+FireUp=2
