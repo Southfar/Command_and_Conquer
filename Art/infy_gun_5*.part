@@ -1,0 +1,10 @@
+
+; Light Infantry
+[infy_gun_5g]
+Cameo				= 
+AltCameo				= 
+Sequence=SealSequence
+Crawls=yes
+Remapable=yes
+FireUp=3
+PrimaryFireFLH=100,0,100
