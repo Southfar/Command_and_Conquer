@@ -1,0 +1,10 @@
+
+; Rocket Infantry
+[infy_rket_5g]
+Cameo       = E3ICON
+AltCameo        = E3UICO
+Sequence=SealSequence
+Crawls=yes
+Remapable=yes
+FireUp=3
+PrimaryFireFLH=100,0,100
