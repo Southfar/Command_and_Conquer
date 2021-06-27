@@ -1,0 +1,8 @@
+
+[ArtilleryArmy]:[Russians]
+UIName				= Name:General_Artillery
+Name				= Artillery General
+Prefix				= AT
+Color				= 
+VeteranInfantry			= IVAN
+;RangeUnitsMult			= 1.15					; "Range" is not a valid multipliable. Do this via replacing the units directly. 
