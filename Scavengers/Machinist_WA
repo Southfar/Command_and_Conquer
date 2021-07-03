@@ -1,0 +1,64 @@
+;******************************************************************************
+;*** Scavenger Machinist ******************************************************
+;******************************************************************************
+
+;------------------------------------------------------------------------------
+[InfantryTypes]
++				= 
+
+;------------------------------------------------------------------------------
+[WAMachinist]:[Machinist_Generic]
+UIName				= Name:Machinist
+Name				= Scavenger Machinist
+Primary=Shovel
+CrushSound=SQUISH6
+Strength=90
+Armor=none
+Doggie=yes
+TechLevel=2
+Sight=4
+Speed=4
+C4=yes
+Pip=yellow
+Engineer=yes
+Owner=Forgotten
+Prerequisite=INFANTRY_LIFT
+AllowedToStartInMultiplayer=no
+Cost=500
+Points=5
+VoiceSelect=19-I000,19-I002,19-I006
+VoiceMove=19-I010,19-I016
+VoiceAttack=19-I018,19-I016
+VoiceFeedback=
+VoiceDie=DEDMAN1,DEDMAN2,DEDMAN2,DEDMAN4,DEDMAN5,DEDMAN6
+Locomotor={4A582744-9839-11d1-B709-00A024DDAFD1}
+PhysicalSize=1
+MovementZone=Infantry
+ThreatPosed=0	; This value MUST be 0 for all building addons
+SpecialThreatValue=1	; this should be between 0 and 1
+ImmuneToVeins=yes
+GuardRange=9
+
+[Digger]
+Spread=1
+Wall=no
+Wood=no
+Verses=1%,1%,1%,1%,1%
+Conventional=yes
+Rocker=yes
+InfDeath=2
+AnimList=DIG
+Deform=100%
+Tiberium=yes
+Bright=no
+ProneDamage=1%
+
+[Shovel]
+Damage=100
+ROF=120
+Anim=DIG
+Range=1
+Projectile=Invisible
+Speed=100
+Warhead=Digger
+Report=120MMF
