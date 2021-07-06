@@ -1,0 +1,49 @@
+
+[VehicleTypes]
++				= ArtilleryCannon155mm
+
+; LaoTze 7's "155" (155mm Self Propelled Gun)
+[ArtillerySP155mmCannon]
+UIName				= 155mm Self Propelled Gun
+Name				= 155mm Self Propelled Gun
+Image=155
+Prerequisite=GAWEAP
+
+;----- Weapons -----
+Primary				= Cannon_155mm
+ElitePrimary			= Cannon_155mm_E
+Category=AFV
+Strength=200
+Turret=yes
+Armor=light
+TechLevel=6
+Sight=7
+Speed=4
+Owner=British,French,Germans,Americans,Alliance
+AllowedToStartInMultiplayer=yes
+Cost=750
+Points=30
+CrateGoodie=no
+ROT=5
+IsTilter=yes
+Crusher=yes
+TooBigToFitUnderBridge=true
+Explosion=TWLT070,S_BANG48,S_BRNL58,S_CLSN58,S_TUMU60
+MovingFire=no
+IsSelectableCombatant=yes
+VoiceSelect=GenAllVehicleSelect
+VoiceMove=GenAllVehicleMove
+VoiceAttack=GenAllVehicleAttackCommand
+VoiceFeedback=
+DieSound=GenVehicleDie
+MoveSound=V3MoveStart
+MaxDebris=3
+Locomotor={4A582741-9839-11d1-B709-00A024DDAFD1}
+MovementZone=Normal
+ThreatPosed=15	; This value MUST be 0 for all building addons
+DamageParticleSystems=SparkSys,SmallGreySSys
+Weight=3.5
+Size=3
+VeteranAbilities=STRONGER,FIREPOWER,SIGHT,FASTER
+EliteAbilities=SELF_HEAL,STRONGER,FIREPOWER,ROF
+ImmuneToVeins=yes
