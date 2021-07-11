@@ -1,0 +1,29 @@
+
+;------------------------------------------------------------------------------
+; Converted from Age of Empires by Viscera. 
+[LION] ; AOE Lion
+Sequence			= LionSequence
+Crawls				= no
+Remapable			= yes
+FireUp				= 2
+PrimaryFireFLH			= 80,0,85
+
+;------------------------------------------------------------------------------
+[LionSequence]
+Ready				= 0,1,1
+Guard				= 0,1,1
+Prone				= 0,1,1
+Walk				= 8,13,13
+Down				= 0,1,1
+Crawl				= 8,13,13
+Up				= 0,1,1
+Idle1				= 112,11,0,S
+Idle2				= 123,11,0,E
+Die1				= 134,10,0
+Die2				= 144,10,0
+FireUp			= 154,11,11
+Die3				= 0,1,1
+Die4				= 0,1,1
+Die5				= 0,1,1
+Cheer				= 115,11,0,E
+Panic				= 8,13,13
