@@ -1,0 +1,12 @@
+
+; Benefactors Servitor
+
+// Stalker
+sk_stalker_health		"50"
+sk_stalker_melee_dmg	"5"
+
+Object BNServitor
+[BNServitor]
+;----- Name -----
+UIName				= Name:Servitor
+Name				= Combine Servitor
