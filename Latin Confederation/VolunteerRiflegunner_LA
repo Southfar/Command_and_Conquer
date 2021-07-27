@@ -1,0 +1,46 @@
+
+[InfantryTypes]
++				= LAVolunteer
+
+; Mexican Volunteer
+[LAVolunteer]
+UIName				= Name:Volunteer
+Name				= Volunteer
+Image=CIV3;CADR
+;AlternateArcticArt=yes
+Category=Soldier
+Primary=M1Carbine
+OccupyWeapon=UCM1Carbine; The weapon I use while Occupying.  Defaults to 0 (Primary)
+EliteOccupyWeapon=UCEliteM1Carbine; The weapon I use while Occupying.  Defaults to 0 (Primary)
+Occupier=yes ; I can Occupy UC buildings
+;Prerequisite=CABRCK
+BuildAt=CAOUTP
+CrushSound=InfantrySquish
+Strength=125
+Armor=none
+TechLevel=1
+Pip=white
+OccupyPip=PersonWhite ; choices are green yellow white red blue purple
+Sight=5
+Speed=4
+Owner=Neutral,OTL,Americans
+Cost=100
+Soylent=50
+Points=5
+IsSelectableCombatant=yes
+VoiceSelect=ConscriptSelect
+VoiceMove=ConscriptMove
+VoiceAttack=ConscriptAttackCommand
+VoiceFeedback=ConscriptFear
+VoiceSpecialAttack=ConscriptMove
+DieSound=ConscriptDie
+Locomotor={4A582744-9839-11d1-B709-00A024DDAFD1}
+PhysicalSize=1
+MovementZone=Infantry
+ThreatPosed=5	; This value MUST be 0 for all building addons
+VeteranAbilities=STRONGER,FIREPOWER,ROF,SIGHT,FASTER
+EliteAbilities=SELF_HEAL,STRONGER,FIREPOWER,ROF
+ImmuneToVeins=yes
+Size=1
+ElitePrimary=M1CarbineE
+IFVMode=2
