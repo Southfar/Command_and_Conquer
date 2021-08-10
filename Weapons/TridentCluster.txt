@@ -1,9 +1,0 @@
-
-[TridentCluster]
-Projectile=TridentClusterBit
-Warhead=NUKE
-Range=5
-Damage=200
-Speed=30
-ROF=100
-Report=
