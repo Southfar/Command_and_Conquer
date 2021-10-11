@@ -25,6 +25,54 @@
 
 ;------------------------------------------------------------------------------
 ; Cybernetic Medic
+
+
+; TechWar v.1.7's cybmedic
+; Cybernetic Medic - Other names were "cyber-medic" and "nod medic"
+Object Cyborg_Medic
+[Cyborg_Medic]:[Medic]
+;----- Name -----
+UIName				= Name:Cyborg_Medic
+Name				= Cybernetic Medic
+
+;----- Base Attributes -----
+Strength			= 300
+Cyborg				= yes
+Fearless			= yes
+
+;----- GFX -----
+;Image				= CYBORG			; techwar v.1.7
+
+Category=Soldier
+Prerequisite=NAHAND
+
+CrushSound=SQUISHY2
+
+;----- Armor -----
+Armor				= light
+Crushable			= no
+TiberiumProof			= yes
+TiberiumHeal			= yes
+Pip=white
+TechLevel=4
+Sight=5
+Speed=4
+Owner=Nod
+Cost=400
+Points=5
+VoiceSelect=22-I000,22-I002,22-I006
+VoiceMove=22-I008,22-I010,22-I014,22-I016,22-I020
+VoiceAttack=22-I008,22-I010,22-I012,22-I018
+VoiceFeedback=
+VoiceDie=DEDMAN1,DEDMAN2,DEDMAN2,DEDMAN4,DEDMAN5,DEDMAN6
+Locomotor={4A582744-9839-11d1-B709-00A024DDAFD1}
+PhysicalSize=1
+MovementZone=Infantry
+DamageParticleSystems=SparkSys
+ThreatPosed=15
+ImmuneToVeins=yes
+EliteAbilities=FASTER,STRONGER,FIREPOWER,SCATTER,ROF,SIGHT,SELF_HEAL
+
 [CyborgMedic]
 
 ;----- Name -----
