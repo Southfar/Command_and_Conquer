@@ -17,6 +17,8 @@ Speed				= 1
 Warhead				= EMPuls
 Report				= 
 
+ROF=50 ;200 needs to be closer to animation time (Kills everything anyway)
+
 ;------------------------------------------------------------------------------
 ; Zeus/Thor/Perun mecha secondary ELITE
 [EMPCannon_CircWave]:[EMPCannon_CircWave_E]
