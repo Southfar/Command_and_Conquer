@@ -1,0 +1,90 @@
+;******************************************************************************
+;*** Submarine Carrier ********************************************************
+;******************************************************************************
+
+;------------------------------------------------------------------------------
+[VehicleTypes]
+1FE7BCC14F47C			= IsonadeTender
+
+;------------------------------------------------------------------------------
+; Isonade Tender
+; Carries drones. 
+[IsonadeTender]
+
+;----- Name -----
+UIName				= Name:SubTender
+Name				= Submarine Tender
+
+;----- GFX -----
+Image				= LEVIATHAN;BSUB
+
+;----- Weapons -----
+Primary=SubmarineLauncher
+LandTargeting=1
+NavalTargeting=5
+CanPassiveAquire=no ; Won't try to pick up own targets
+
+;----- AI -----
+ToProtect			= yes
+Category			= Vessel
+IsSelectableCombatant		= yes
+ThreatPosed			= 25
+GuardRange			= 10
+
+;----- Base stats -----
+Strength			= 800
+Size				= 50
+Naval				= yes
+
+;----- Armor -----
+Armor=heavy
+TechLevel=7
+Sight=4
+Sensors=yes
+SensorsSight=7
+Speed=4
+
+;----- Procuration -----
+Prerequisite			= AAShipyard,AATechCenter
+CrateGoodie			= yes
+Owner				= Alliance,Chinese,Japanese,Koreans
+AllowedToStartInMultiplayer	= no
+BuildLimit			= 1
+Cost				= 2000
+
+;----- Scoring -----
+Points				= 55
+ROT=1
+Crusher=no; yes
+Weight=5
+
+;----- Load -----
+Crewed				= yes
+Spawns				= Exocet
+SpawnsNumber			= 3
+SpawnRegenRate			= 600
+SpawnReloadRate			= 150
+
+;----- Damage & Destruction -----
+DamageParticleSystem		= SparkSys,SmallGreySSys
+Explosion			= TWLT070,S_BANG48,S_BRNL58,S_CLSN58,S_TUMU60
+
+;----- SFX -----
+VoiceSelect			= IsonadeTenderSelect
+VoiceMove			= IsonadeTenderMoveCommand
+VoiceAttack			= IsonadeTenderAttackCommand
+VoiceFeedback			= 
+DieSound			= 
+SinkingSound			= GenLargeWaterDie
+MoveSound			= ACCMoveStart
+
+;----- Movement -----
+Locomotor			= {2BEA74E1-67CCA-11d3-BE14-00104B62A16C}
+SpeedType			= Float
+MovementZone			= Water
+Accelerates			= true
+TooBigToFitUnderBridge		= yes
+
+;----- Veterancy -----
+VeteranAbilities		= STRONGER,SIGHT,FASTER
+EliteAbilities			= SELF_HEAL,STRONGER
