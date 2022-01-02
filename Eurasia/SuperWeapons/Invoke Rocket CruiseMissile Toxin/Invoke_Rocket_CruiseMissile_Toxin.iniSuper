@@ -1,0 +1,345 @@
+
+; Eurasia uses a toxin scud barrage for this. BlackOps uses a cruise missile. 
+
+
+[SuperWeaponTypes]
+
+; Chem weapon. The logic will fail if this weapon is 'powered'
+; TS's ChemicalSpecial
+[InvokeToxinCruiseMissile]
+;----- Name -----
+UIName=Name:
+Name=Toxin Cruise Missile Strike
+
+;----- SFX -----
+RechargeVoice=
+ChargingVoice=
+ImpatientVoice=
+SuspendVoice=
+
+;----- Availability -----
+DisableableFromShell=yes
+RechargeTime=4
+AuxBuilding=ChemTech
+;ManualControl=yes
+IsPowered=yes
+
+;----- Base Attributes -----
+Type=ChemMissile
+Action=ChemBomb
+
+;----- GFX -----
+SidebarImage=
+FlashSidebarTabFrames=120
+ShowTimer=yes
+Range=5
+LineMultiplier=2
+Cursor.Frame=249
+Cursor.Count=9
+Cursor.MiniFrame=516
+Cursor.MiniCount=1
+
+;----- Payload -----
+WeaponType=ChemLauncher
+
+;----- AI -----
+AIDefendAgainst=yes
+SW.AITargeting=GeneticMutator
+
+[IonCannonSpecial]
+UIName=Name:Ion
+Name=Ion Cannon
+IsPowered=true
+RechargeVoice=00-I156
+ChargingVoice=
+ImpatientVoice=
+SuspendVoice=
+RechargeTime=8.5
+Type=GenericWarhead;IonCannon
+Action=Custom;IonCannon
+SidebarImage=IONCICON
+ShowTimer=no
+;DisableableFromShell=yes
+AIDefendAgainst=yes
+Range=7
+LineMultiplier=2
+Cursor.Frame=249
+Cursor.Count=9
+Cursor.MiniFrame=516
+Cursor.MiniCount=1
+SW.Animation=IONBEAM
+GenericWarhead.Warhead=IonCannonWH
+GenericWarhead.Damage=751
+
+[DropPodSpecial]
+UIName=Name:Drop Pod
+Name=Drop Pod
+IsPowered=true
+RechargeVoice=00-I506
+ChargingVoice=
+ImpatientVoice=
+SuspendVoice=
+RechargeTime=1;7  ;was 6
+;Type=DropPod
+Type=ParaDrop;SpyPlane
+;Action=DropPod
+Action=Custom
+SidebarImage=PODSICON
+ShowTimer=yes
+DisableableFromShell=no ; gs this determines which superweapons are turned off by the checkbox
+FlashSidebarTabFrames=120; default is always, put 0 for never, or a number for x
+SpyPlane.Type=DPOD
+SpyPlane.Count=4
+SpyPlane.Mission=Attack
+AIDefendAgainst=no
+Range=3
+LineMultiplier=2
+Cursor.Frame=480
+Cursor.Count=8
+Cursor.MiniFrame=512
+Cursor.MiniCount=1
+SW.AITargeting=ParaDrop
+Money.Amount=-4750
+
+ParaDrop.Types=SHIK
+ParaDrop.Num=3
+ParaDrop.Aircraft=DPOD
+ParaDrop.Count=1;3
+
+[DropshipSpecial]
+UIName=NOSTR:Dropship Loadout
+Name=Dropship Loadout
+IsPowered=false
+RechargeVoice=
+ChargingVoice=
+ImpatientVoice=
+SuspendVoice=
+RechargeTime=4
+Type=ParaDrop
+Action=Custom
+SidebarImage=DROPICON
+ShowTimer=yes
+DisableableFromShell=no ; gs this determines which superweapons are turned off by the checkbox
+ParaDrop.Types=LYNX
+ParaDrop.Num=4
+ParaDrop.Aircraft=ASHP
+ParaDrop.Count=1
+Cursor.Frame=110
+Cursor.Count=9
+Cursor.MiniFrame=516
+Cursor.MiniCount=1
+Money.Amount=-3000
+
+SW.FireIntoShroud=no
+SW.AutoFire=yes
+SW.ManualFire=no
+SW.ShowCameo=yes
+SW.AITargeting=Self
+
+[KamikazeSpecial]
+UIName=Name:kamikaze
+Name=Kamikaze Airstrike
+IsPowered=false
+RechargeVoice=
+ChargingVoice=
+ImpatientVoice=
+SuspendVoice=
+RechargeTime=4
+Type=SpyPlane
+Action=Custom
+SidebarImage=YokoIcon;DETNICON
+ShowTimer=no
+DisableableFromShell=no ; gs this determines which superweapons are turned off by the checkbox
+FlashSidebarTabFrames=120; default is always, put 0 for never, or a number for x
+SpyPlane.Type=GHUNTER
+SpyPlane.Count=1
+SpyPlane.Mission=Attack
+AIDefendAgainst=yes
+Range=3;7
+LineMultiplier=2
+Range=7
+LineMultiplier=2
+Cursor.Frame=480
+Cursor.Count=8
+Cursor.MiniFrame=512
+Cursor.MiniCount=1
+SW.AITargeting=Offensive
+
+;(RepairBotSpecial)
+;UIName=NOSTR:Repair Swarm
+;Name=Repair Drones
+;IsPowered=false
+;RechargeVoice=
+;ChargingVoice=
+;ImpatientVoice=
+;SuspendVoice=
+;RechargeTime=.4
+;Type=SpyPlane
+;;Action= is not valid for this SW ->Action=Custom
+;SidebarImage=HEALICON
+;ShowTimer=no
+;DisableableFromShell=no ; gs this determines which superweapons are turned off by the checkbox
+;FlashSidebarTabFrames=120; default is always, put 0 for never, or a number for x
+;SpyPlane.Type=REPAIR
+;SpyPlane.Count=8
+;SpyPlane.Mission=Guard
+;AIDefendAgainst=no
+;Action=Custom
+;Cursor.Frame=150
+;Cursor.Count=19
+;NoCursor.Frame=190
+;SW.RequiresTarget=units
+;SW.RequiresHouse=team
+;SW.AutoFire=yes
+;SW.ManualFire=no
+
+; drone squad
+[HuntSeekSpecial]
+UIName=NOSTR:Drone Strike
+Name=Drone Attack
+IsPowered=false
+RechargeVoice=
+ChargingVoice=
+ImpatientVoice=
+SuspendVoice=
+RechargeTime=4
+Type=SpyPlane
+Action=Custom
+SidebarImage=DRONICON
+ShowTimer=no
+DisableableFromShell=no ; gs this determines which superweapons are turned off by the checkbox
+FlashSidebarTabFrames=120; default is always, put 0 for never, or a number for x
+SpyPlane.Type=DRON2
+SpyPlane.Count=8
+SpyPlane.Mission=Attack
+AIDefendAgainst=no
+Cursor.Frame=180
+Cursor.Count=8
+NoCursor.Frame=41
+
+[MoneySpecial]
+UIName=NOSTR:Money Transfer
+Name=Money Transfer
+SidebarImage=CashIcon
+RechargeTime=2.3
+Money.Amount=2000
+IsPowered=true
+RechargeVoice=
+ChargingVoice=
+ImpatientVoice=
+SuspendVoice=
+Type=SonarPulse
+Action=None
+ShowTimer=no
+DisableableFromShell=no ; gs this determines which superweapons are turned off by the checkbox
+FlashSidebarTabFrames=120; default is always, put 0 for never, or a number for x
+;SW.AutoFire=yes
+SW.Range=-1
+SW.AffectsHouse=none
+SonarPulse.Delay=0
+SW.AITargeting=NoTarget
+;SW.ShowCameo=no
+SW.Animation=MONEY
+
+[CrateSpecial]
+UIName=Name:CRATE
+Name=Crate Delivery
+IsPowered=false
+RechargeVoice=
+ChargingVoice=
+ImpatientVoice=
+SuspendVoice=
+RechargeTime=4.5
+Type=SpyPlane;EMPulse
+SidebarImage=CrateIcon
+Action=Custom;EMPulse
+ShowTimer=no
+DisableableFromShell=no ; gs this determines which superweapons are turned off by the checkbox
+FlashSidebarTabFrames=120; default is always, put 0 for never, or a number for x
+SpyPlane.Type=XIAN
+SpyPlane.Count=1
+SpyPlane.Mission=Attack
+AIDefendAgainst=yes
+Range=7
+LineMultiplier=2
+Cursor.Frame=249
+Cursor.Count=9
+Cursor.MiniFrame=516
+Cursor.MiniCount=1
+
+[PsychicRevealSpecial]
+UIName=Name:PsyReveal
+Name=Psychic Reveal
+IsPowered=false
+RechargeVoice=
+ChargingVoice=
+ImpatientVoice=                                  
+SuspendVoice=
+RechargeTime=4
+Type=PsychicReveal
+Action=PsychicReveal
+SidebarImage=PSYRICON
+ShowTimer=no
+DisableableFromShell=no ; gs this determines which superweapons are turned off by the checkbox
+FlashSidebarTabFrames=120; default is always, put 0 for never, or a number for x
+SW.Animation=REVEAL
+
+[PsychicDominatorSpecial]
+UIName=Name:YAPPET
+Name=Control Hack
+IsPowered=true
+RechargeVoice=00-I156
+ChargingVoice=
+ImpatientVoice=
+SuspendVoice=
+RechargeTime=0.4;10
+Type=PsychicDominator
+;Action=PsychicDominator
+SidebarImage=PDOMICON
+ShowTimer=yes
+DisableableFromShell=yes ; gs this determines which superweapons are turned off by the checkbox
+Range=1.4
+LineMultiplier=3
+; cursor stuff
+Action=Custom	; essential
+Cursor.Frame=249
+Cursor.Count=9
+Cursor.MiniFrame=516
+Cursor.MiniCount=1
+SW.AffectsTarget=infantry,units,buildings
+
+[DominatorWH]
+CellSpread=7;6;  just for the damage now.  Capture range is DominatorCaptureRange
+PercentAtMax=.2
+Verses=0%,0%,0%,0%,0%,0%,0%,0%,0%,0%,0%
+Versus.MineArmor=100%
+Versus.DemoArmor=100%
+
+[RepairSpecial]
+UIName=NOSTR:Repair
+Name=Super Repair
+IsPowered=true
+RechargeVoice=
+ChargingVoice=
+ImpatientVoice=
+SuspendVoice=
+RechargeTime=1;3
+Type=GenericWarhead
+Action=Custom
+SidebarImage=REPRICON
+ShowTimer=no
+Cursor.Frame=180
+Cursor.Count=8
+NoCursor.Frame=41
+SW.Animation=WRENCH
+SW.Sound=BuildingRepaired
+;GenericWarhead.Warhead=Mechanical	;ares 0.1
+;GenericWarhead.Damage=-50000		;ares 0.1
+SW.Warhead=Mechanical
+SW.Damage=-50000
+Money.Amount=-1250
+Range=1
+
+SW.RequiresTarget=units,buildings
+;SW.RequiresHouse=team	; used to be team, but this would forbid repairing neutral and UC structures.
+SW.AffectsTarget=units,buildings
