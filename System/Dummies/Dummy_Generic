@@ -8,7 +8,8 @@
 
 ;------------------------------------------------------------------------------
 [GenericDummy]
-UIName				= Name:nul
+UIName				= Name:
+Name				= Dummy
 Crushable				= no
 Warpable				= no
 TiberiumProof		= yes
@@ -31,3 +32,32 @@ Locomotor={4A582744-9839-11d1-B709-00A024DDAFD1}
 MovementZone=Infantry
 Size=9999999999999999
 Strength=10000
+PlaceAnywhere			= yes
+Unsellable			= yes
+Selectable			= no
+Bombable			= no
+CanC4				= no
+Crewed				= no
+Capturable			= no
+ThreatPosed			= 0
+Insignificant			= yes
+DontSayUnitLost			= yes
+Inviso				= yes
+Invisible			= yes
+InvisibleInGame			= yes
+HasRadialIndicator		= yes
+Strength			= 100000			; Alter AttachEffect.Animation damage for Types derived from this one to determine their duration. 
+
+;******************************************************************************
+;*** Field Maker Dummy Building ***********************************************
+;******************************************************************************
+
+;------------------------------------------------------------------------------
+[BuildingTypes]
++				= FieldMakerDummyBldg
+
+;------------------------------------------------------------------------------
+; DO NOT USE!!!
+[FieldMakerDummyBldg]:[GenericDummy]
+Name				= Field Maker Dummy
+Armor				= FieldMakerDummyArmor
