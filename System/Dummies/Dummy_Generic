@@ -1,0 +1,33 @@
+;*****************************************************************************
+;*** Generic Dummy ***********************************************************
+;*****************************************************************************
+
+;------------------------------------------------------------------------------
+[InfantryTypes]
++				= GenericDummy
+
+;------------------------------------------------------------------------------
+[GenericDummy]
+UIName				= Name:nul
+Crushable				= no
+Warpable				= no
+TiberiumProof		= yes
+ImmuneToVeins=yes
+ImmuneToRadiation=yes
+ImmuneToPoison=yes
+ImmuneToPsionics=yes
+Trainable				= no
+Cost=0
+Soylent=0
+ThreatPosed=0
+Points=0
+AllowedToStartInMultiplayer=no
+Sight=0
+PixelSelectionBracketDelta=999
+PhysicalSize=1
+Speed=0;1
+TechLevel				= -1
+Locomotor={4A582744-9839-11d1-B709-00A024DDAFD1}
+MovementZone=Infantry
+Size=9999999999999999
+Strength=10000
