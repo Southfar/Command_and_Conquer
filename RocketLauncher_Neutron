@@ -1,0 +1,19 @@
+
+;------------------------------------------------------------------------------
+Weapon SupW_NeutronMissileWeapon
+  PrimaryDamage = 0               ; not used for this weapon (it's "special")            
+  PrimaryDamageRadius = 0         ; not used for this weapon (it's "special")     
+  AttackRange = 99999             ; not used for this weapon (it's "special")
+  DamageType = RADIATION          ; not used for this weapon (it's "special")
+  DeathType = NORMAL
+  WeaponSpeed = 99999             ; not used for this weapon (it's "special")
+  ProjectileObject = SupW_NeutronMissile
+  ProjectileExhaust = NeutronMissileExhaust
+  FireFX = WeaponFX_NeutronMissile
+  ProjectileDetonationFX = None   ; not used for this weapon (it's "special")
+  RadiusDamageAffects = ALLIES ENEMIES NEUTRALS
+  DelayBetweenShots = 0           ; not used for this weapon (it's "special")
+  ClipSize = 1                    ; not used for this weapon (it's "special")
+  ClipReloadTime = 0              ; not used for this weapon (it's "special")
+  AutoReloadsClip = No            ; not used for this weapon (it's "special")
+End
