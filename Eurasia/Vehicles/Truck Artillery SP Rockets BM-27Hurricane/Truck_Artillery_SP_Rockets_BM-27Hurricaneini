@@ -1,42 +1,32 @@
+;*****************************************************************************
+;*** BM-27 Hurricane Rocket Artillery Truck **********************************
+;*****************************************************************************
+
 ;------------------------------------------------------------------------------
 [VehicleTypes]
 7AAE6F1CA64EB			= BM-27
 
 ;------------------------------------------------------------------------------
 ; BM-27 Uragan
-[BM-27]
+[BM-27]:[BM-21]
+;----- Text -----
 UIName				= Name:BM-27
-Name				= BM-27 Uragan
-Category			= LRFS
+Name				= BM-27 Hurricane
+;----- Weapons -----
 Primary				= RocketLauncher_CEFD6
 ElitePrimary			= RocketLauncher_79439
 Strength=200
 Armor=light
 
-;----- Turrets -----
-Turret				= yes
 TechLevel=4
 Sight=10
 Speed=4
 
 ;----- Procuration -----
-DoubleOwned=yes
 Owner				= Soviet,Russians,Ukrainians,Belorussians,BlackGuard
 AllowedToStartInMultiplayer=no
 Cost=900
 Points=40
-ROT=5
-Crusher=no
-SelfHealing=no
-Crewed=no
-Explosion=TWLT070,S_BANG48,S_BRNL58,S_CLSN58,S_TUMU60
-VoiceSelect=GenSovVehicleSelect
-VoiceMove=GenSovVehicleMove
-VoiceAttack=GenSovVehicleAttackCommand
-VoiceFeedback=
-DieSound=GenVehicleDie
-MaxDebris=2
-Locomotor={4A582741-9839-11d1-B709-00A024DDAFD1}
 Weight=2
 MovementZone=Normal
 ThreatPosed=0	; This value MUST be 0 for all building addons
