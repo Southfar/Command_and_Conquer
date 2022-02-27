@@ -1,0 +1,97 @@
+
+The Messiah Returns
+------------------
+
+[Houses]
++				= Soviet
++				= Woronezh
++				= Rostov
++				= Saratov
++				= Ukraine
+
+
+[Conscript]
+DoubleOwned=yes
+
+[RPGConscript]
+DoubleOwned=yes
+
+[FlamerConscript]
+DoubleOwned=yes
+
+[SUMachinist]
+DoubleOwned=yes
+
+; Available to Woronezh (Russians), Ukraine, not available to Player. 
+[Spetsnaz]
+ForbiddenHouses=Soviet
+
+; No longer a Soviet unit! 
+; [Halftrack]
+; DoubleOwned=yes
+
+[T-80]
+DoubleOwned=yes
+
+[T-90]
+DoubleOwned=yes
+
+; Available to Ukraine. Not available to player. 
+[TeslaATV]
+ForbiddenHouses=Soviet
+
+; Available to Woronezh (Russians). Not available to player. 
+[TeslaTank]
+ForbiddenHouses=Soviet
+
+[BM-27]
+DoubleOwned=yes
+
+; No longer distinct from Hind Gunship! 
+;[HindTransport]
+;DoubleOwned=yes
+
+[Hind]
+DoubleOwned=yes
+
+[Yak]
+DoubleOwned=yes
+
+[Mig]
+DoubleOwned=yes
+
+[SUBunker]
+DoubleOwned=yes
+
+; No longer a Soviet defense! 
+;[SentryEmplacement]
+;DoubleOwned=yes
+
+; No longer a Soviet defense! 
+;[FlakEmplacement]
+
+; This subsumes them. 
+[SUMGEmplacement]
+DoubleOwned=yes
+
+[SUGattEmplacement]
+DoubleOwned=yes
+
+; Available to Woronezh (Russians), Ukraine, not available to Player. 
+[SURocketsEmplacement]
+ForbiddenHouses=Soviet
+
+; Available to Woronezh (Russians), Ukraine, not available to Player. 
+[SUTeslaEmplacement]
+ForbiddenHouses=Soviet
+
+A New Beginning
+---------------
+
+[Houses]
++				= Soviet
++				= OldBelievers
++				= Europeans
++				= Scandinavians
++				= British
++				= BritishNavy
