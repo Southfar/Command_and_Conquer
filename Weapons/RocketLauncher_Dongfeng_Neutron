@@ -1,0 +1,33 @@
+
+;------------------------------------------------------------------------------
+[WeaponTypes]
++				= NeutronDongfengLauncher
++				= NeutronDongfengLauncher_E
+
+;------------------------------------------------------------------------------
+; Gen/ZH's NeutronMissileWeapon
+[NeutronDongfengLauncher]:[DongfengLauncher]
+;----- Payload -----
+PrimaryDamage = 0               ; not used for this weapon (it's "special")            
+PrimaryDamageRadius = 0         ; not used for this weapon (it's "special")     
+;----- Projectile -----
+AttackRange = 99999             ; not used for this weapon (it's "special")
+DamageType = RADIATION          ; not used for this weapon (it's "special")
+DeathType = NORMAL
+WeaponSpeed = 99999             ; not used for this weapon (it's "special")
+  ProjectileObject = NeutronMissile
+  ProjectileExhaust = NeutronMissileExhaust
+  FireFX = WeaponFX_NeutronMissile
+  ProjectileDetonationFX = None   ; not used for this weapon (it's "special")
+  RadiusDamageAffects = ALLIES ENEMIES NEUTRALS
+  DelayBetweenShots = 0           ; not used for this weapon (it's "special")
+  ClipSize = 1                    ; not used for this weapon (it's "special")
+  ClipReloadTime = 0              ; not used for this weapon (it's "special")
+  AutoReloadsClip = No            ; not used for this weapon (it's "special")
+End
+
+;------------------------------------------------------------------------------
+; Gen/ZH's SupW_NeutronMissileWeapon
+[NeutronDongfengLauncher_2]
+ProjectileObject = SupW_NeutronMissile
+End
