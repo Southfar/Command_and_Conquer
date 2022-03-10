@@ -1,4 +1,186 @@
+;------------------------------------------------------------------------------
+Weapon ScorpionTankGunFXWeapon
+  PrimaryDamage = 0.0
+  PrimaryDamageRadius = 0.0
+  AttackRange = 125.0
+  FireFX = WeaponFX_GenericTankShellDetonation
+End
 
+;-------------------------------------------------------------------------------
+; Gen/ZH's TunnelNetworkGun
+[EmplacementMachineGun]
+PrimaryDamage = 15.0
+PrimaryDamageRadius = 0.0
+AttackRange = 175.0
+DamageType = SMALL_ARMS
+DeathType = NORMAL
+WeaponSpeed = 600         ; dist/sec 
+ProjectileObject = NONE
+FireFX = WeaponFX_TechnicalGunFire
+FireSound =   HumveeWeapon
+RadiusDamageAffects = ALLIES ENEMIES NEUTRALS
+DelayBetweenShots = 250
+ClipSize = 0
+ClipReloadTime = 0
+End
+
+;-------------------------------------------------------------------------------
+Weapon TunnelNetworkGunDUMMY
+  PrimaryDamage = 0.01
+  PrimaryDamageRadius = 0.0
+  AttackRange = 175.0
+  DamageType = SMALL_ARMS
+  DeathType = NORMAL
+  WeaponSpeed = 99999         ; dist/sec 
+  ProjectileObject = NONE
+  DelayBetweenShots = 1000         ; time between shots, msec
+  ClipSize = 0                    ; how many shots in a Clip (0 == infinite)
+  ClipReloadTime = 0              ; how long to reload a Clip, msec
+End
+
+;------------------------------------------------------------------------------
+Weapon CommandoMachineGun
+PrimaryDamage= 10.0
+PrimaryDamageRadius= 0.0
+AttackRange = 80.0
+  DamageType = SMALL_ARMS
+  DeathType = NORMAL
+  WeaponSpeed = 999999.0          ; dist/sec (huge value == effectively instant)
+  ProjectileObject = NONE
+  FireFX                = WeaponFX_GenericMachineGunFire
+  VeterancyFireFX       = HEROIC WeaponFX_GenericMachineGunFireWithRedTracers
+  RadiusDamageAffects = ALLIES ENEMIES NEUTRALS
+  DelayBetweenShots = 500               ; time between shots, msec
+  ClipSize = 0                    ; how many shots in a Clip (0 == infinite)
+  ClipReloadTime = 0              ; how long to reload a Clip, msec
+End
+
+
+;------------------------------------------------------------------------------
+Weapon CarpetBombWeapon
+  PrimaryDamage = 300.0            
+  PrimaryDamageRadius = 50.0      
+  AttackRange = 100.0
+  DamageType = EXPLOSION         
+  DeathType = EXPLODED
+  WeaponSpeed = 99999.0             
+  ProjectileObject = NONE
+  RadiusDamageAffects = ALLIES ENEMIES NEUTRALS NOT_SIMILAR   
+  DelayBetweenShots = 0                   ; time between shots, msec
+  ClipSize = 1                        ; how many shots in a Clip (0 == infinite)
+  ClipReloadTime = 0               ; how long to reload a Clip, msec
+  AutoReloadsClip = No 
+End
+
+;--------------------------------------------------------------------------------
+; Gen/ZH's AnthraxBombWeapon
+[ToxinBombDrop]
+  PrimaryDamage       = 200.0            
+  PrimaryDamageRadius = 100.0      
+  AttackRange         = 100.0
+  DamageType          = EXPLOSION         
+  DeathType           = EXPLODED
+  WeaponSpeed         = 99999.0
+  FireOCL             = OCL_PoisonFieldAnthraxBomb  ; So this weapon will do normal damage, and create this object             
+  RadiusDamageAffects = ALLIES ENEMIES NEUTRALS
+  DelayBetweenShots   = 0                   ; time between shots, msec
+  ClipSize            = 1                   ; how many shots in a Clip (0 == infinite)
+  ClipReloadTime      = 0                   ; how long to reload a Clip, msec
+  AutoReloadsClip     = No 
+End
+
+;--------------------------------------------------------------------------------
+; Gen/ZH's AnthraxGammaBombWeapon
+[ToxinBombDrop_A1]
+  FireOCL             = OCL_PoisonFieldAnthraxGammaBomb  ; So this weapon will do normal damage, and create this object             
+End
+
+
+;------------------------------------------------------------------------------
+; Gen/ZH's BurningEmberWeapon
+[Burn]
+PrimaryDamage = 2.0            
+PrimaryDamageRadius = 2.0      
+AttackRange = 100.0
+DamageType = FLAME         
+DeathType = BURNED
+WeaponSpeed = 99999.0             
+ProjectileObject = NONE
+RadiusDamageAffects = ALLIES ENEMIES NEUTRALS
+DelayBetweenShots = 0                   ; time between shots, msec
+ClipSize = 1                        ; how many shots in a Clip (0 == infinite)
+ClipReloadTime = 0               ; how long to reload a Clip, msec
+AutoReloadsClip = No 
+End
+
+;------------------------------------------------------------------------------
+; Gen/ZH's FireWallSegmentWeapon
+[Burn_2]:[Burn]
+;----- Payload -----
+PrimaryDamage               = 4.0
+PrimaryDamageRadius         = 10.0      
+AttackRange                 = 15.0
+DamageType                  = FLAME
+DeathType                   = BURNED
+WeaponSpeed                 = 600                     ;  dist/sec 
+
+; FireFx left commented out to illustrate particle presence is on object
+  ;FireFX = WeaponFX_SmallFireFieldWeapon
+
+  DelayBetweenShots           = 250                ; time between shots, msec
+End
+
+;------------------------------------------------------------------------------
+; Gen/ZH's FireWallSegmentUpgradedWeapon
+[Burn_3]:[Burn_2]
+PrimaryDamage               = 5.0            
+End
+
+;------------------------------------------------------------------------------
+; Gen/ZH's TreeFireDealDamageWeapon
+[Burn_Tree]
+PrimaryDamage = 5.0            
+PrimaryDamageRadius = 2.0      
+AttackRange = 100.0
+  WeaponSpeed = 99999.0             
+  ProjectileObject = NONE
+  RadiusDamageAffects = ALLIES ENEMIES NEUTRALS
+  DelayBetweenShots = 0                   ; time between shots, msec
+  ClipSize = 1                        ; how many shots in a Clip (0 == infinite)
+  ClipReloadTime = 0               ; how long to reload a Clip, msec
+  AutoReloadsClip = No 
+End
+
+
+;------------------------------------------------------------------------------
+; firing this weapon just creates a Firestorm object.
+Weapon FirestormSmallCreationWeapon
+  DamageType = FLAME
+  DeathType = BURNED
+  FireOCL = OCL_FirestormSmall
+End
+
+;------------------------------------------------------------------------------
+; firing this weapon just creates a Firestorm object.
+Weapon BlackNapalmFirestormSmallCreationWeapon
+  DamageType = FLAME
+  DeathType = BURNED
+  FireOCL = OCL_BlackNapalmFirestormSmall
+End
+
+;------------------------------------------------------------------------------
+Weapon SmallFireFieldCreationWeapon
+  FireOCL = OCL_FireFieldSmall
+  PrimaryDamage = 0.0
+  PrimaryDamageRadius = 1.0
+End
+
+;------------------------------------------------------------------------------
+Weapon SmallFireFieldUpgradedCreationWeapon
+  FireOCL = OCL_FireFieldUpgradedSmall
+  PrimaryDamage = 0.0
+  PrimaryDamageRadius = 1.0
+End
 ;------------------------------------------------------------------------------
 Weapon HumveeGun
   PrimaryDamage = 10.0  ; 8.0 
