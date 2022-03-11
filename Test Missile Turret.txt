@@ -48,3 +48,42 @@ AntiArmorValue=25
 AntiAirValue=0
 ;gs these three are in abstract units and just help the AI pick the right base defense. (see AIForcePredictionFudge)
 DistributedFire=yes
+
+
+; TechWar v.1.7's omniupgr (Omni Upgrade (multiple missiles)) and stingcannon (Stingermissile Cannon). 
+[omniupgr]
+UIName				= Name:
+Name				= Omni Upgrade
+Image=GAROCK
+Prerequisite			= GACTWR,GAPILE,GATECH
+TechLevel=9
+Armor=wood
+Sight=8
+Owner=GDI
+Cost=1500
+Points=30
+Power=-20
+Crewed=no
+Capturable=no
+Explosion=TWLT070,S_BANG48,S_BRNL58,S_CLSN58,S_TUMU60
+PowersUpBuilding=gactwr
+PowersUpToLevel=2
+Primary=omnitower
+Turret=yes
+ThreatPosed=0
+IsBaseDefense=yes
+
+Name=Stingercannon Upgrade
+Image=GACSAM
+Prerequisite=GACTWR,GARADR
+TechLevel=7
+
+Sight=10
+Cost=1000
+Power=-30
+Explosion=TWLT070
+PowersUpBuilding=gactwr
+PowersUpToLevel=3
+Primary=stingermissile
+Secondary=stingermissile
+Powered=yes
