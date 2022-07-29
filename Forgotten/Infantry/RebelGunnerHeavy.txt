@@ -1,0 +1,6 @@
+Heavy Gunner
+	
+Prerequisite: League Barracks, League Radar
+Cost: 600
+Classification: Heavy Battle Infantry
+This powerful infantry utilises a heavy automatic machine gun to dispense serious devastation to oncoming enemy infantry and even light vehicles.
