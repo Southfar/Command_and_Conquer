@@ -1,0 +1,262 @@
+;******************************************************************************
+;*** Whirligig Gun Drone ******************************************************
+;******************************************************************************
+
+;------------------------------------------------------------------------------
+[AircraftTypes]
++				= SamaraDrone
+
+;------------------------------------------------------------------------------
+; Flying Gun Drone, aka the Wingnut
+; Gen/ZH's AmericaVehicleBattleDrone
+Object SamaraDrone
+[SamaraDrone]
+;----- Gfx -----
+SelectPortrait         = SABattleDrone_L
+ButtonImage            = SABattleDrone
+
+UpgradeCameo1 = Upgrade_AmericaDroneArmor
+;UpgradeCameo2 = NONE
+;UpgradeCameo3 = NONE
+;UpgradeCameo4 = NONE
+;UpgradeCameo5 = NONE
+
+;MAIN CHASSIS
+Draw = W3DModelDraw ModuleTag_01
+OkToChangeModelColor = Yes
+
+DefaultConditionState
+      Model = AVBATTLEDR
+      Animation = AVBATTLEDR.AVBATTLEDR
+      AnimationMode = LOOP
+      Turret = Turret01
+      TurretPitch = TurretEL01
+      WeaponMuzzleFlash = PRIMARY TurretFX01
+      WeaponFireFXBone = PRIMARY Muzzle01
+    End
+
+    ConditionState = REALLYDAMAGED
+      Model = AVBATTLEDR_D
+      Animation = AVBATTLEDR_D.AVBATTLEDR_D
+      AnimationMode = LOOP
+    End
+  End
+
+  ;EXTENDING ARM (FOR REPAIRING)
+  Draw = W3DModelDraw ModuleTag_02
+    OkToChangeModelColor = Yes
+
+    DefaultConditionState
+      Model = AVBATTLEDR_A
+    End
+
+    ;Unloading the arm (before starting to repair)
+    ConditionState = UNPACKING
+      Animation = AVBATTLEDR_A1.AVBATTLEDR_A1
+      AnimationMode = ONCE
+    End
+
+    ;Loading the arm (after reparing complete)
+    ConditionState = PACKING
+      Animation = AVBATTLEDR_A1.AVBATTLEDR_A1
+      AnimationMode = ONCE_BACKWARDS
+      Flags = START_FRAME_LAST
+    End
+
+    ;Repair extending animation 1 (using bogus condition states -- doesn't justify making a whole new set)
+    ConditionState = FIRING_B
+      Animation = AVBATTLEDR_A2.AVBATTLEDR_A2
+      AnimationMode = ONCE
+    End
+
+
+    ;Repair retracting animation 1 (using bogus condition states -- doesn't justify making a whole new set)
+    ConditionState = FIRING_C
+      Animation = AVBATTLEDR_A2.AVBATTLEDR_A2
+      AnimationMode = ONCE_BACKWARDS
+      Flags = START_FRAME_LAST
+    End
+
+  End
+
+;----- Text -----
+UIName				= Name:Drone_Samara
+Name				= Samara Gun Drone
+DisplayName			= OBJECT:BattleDrone
+;----- Availability -----
+Side				= America
+Owner				= Americans
+Cost				= 200
+BuildCost			= 200
+BuildTime			= 5.0				;in seconds
+Prerequisites
+Prerequisite			= UNFactory
+	Object			= AmericaWarFactory
+End
+;----- UI -----
+EditorSorting			= VEHICLE
+;----- Body -----
+Strength			= 
+Size				= 0
+TransportSlotCount		= 0				; how many "slots" we take in a transport (0 == not transportable)
+Strength			= 100
+Body				= ActiveBody ModuleTag_03
+	MaxHealth		= 100.0
+	InitialHealth		= 100.0
+End
+;----- Weapons -----
+WeaponSet
+	Conditions		= None 
+	Weapon			= PRIMARY BattleDroneMachineGun
+Primary				= SamaraDroneGun
+End
+;----- Armor -----
+Armor				= 
+ArmorSet
+	Conditions		= None
+	Armor			= TankArmor
+	DamageFX		= SmallTankDamageFX
+End
+;----- Perception -----
+VisionRange			= 150
+ShroudClearingRange		= 150
+Sight				= 6				; Gen/ZH 100 is 4 cells, so 150=1.5*4=6 cells (if linear). 
+;----- Veterancy -----
+ExperienceValue			= 10 10 10 10 			; Experience point value at each level - there is no way to say this in Ares. 
+IsTrainable			= No				; This is the Gen/ZH flag analogous to TS/RA2's "Trainable". 
+Trainable			= No				; This is the TS/RA2 flag analogous to Gen/ZH's "IsTrainable". 
+;----- Sfx -----
+VoiceSelect			= NoSound
+VoiceMove			= NoSound
+VoiceAttack			= NoSound
+SoundMoveStart			= NoSound
+UnitSpecificSounds
+; These have the syntax of SomeNameSomewhereInCode = SomeNameSomewhereInLookupINIs
+	TurretMoveStart		= NoSound
+	TurretMoveLoop		= TurretMoveLoop
+End
+
+  RadarPriority       = UNIT
+;----- Taxonomy -----
+KindOf				= PRELOAD CAN_CAST_REFLECTIONS VEHICLE SELECTABLE CAN_ATTACK DRONE NO_SELECT
+ConsideredAircraft		= yes
+;----- Load -----
+Crewed				= no
+ProtectedDriver			= yes				; No driver, but needs this to say that the driver can't be sniped (since it's an automaton, it doesn't have a driver). 
+
+  Behavior = AIUpdateInterface ModuleTag_04
+    Turret
+      TurretTurnRate        = 360   // turn rate, in degrees per sec
+      TurretPitchRate       = 360
+      MinPhysicalPitch      = -75 ; If allows pitch, the lowest I can dip down to shoot.  defaults to 0 (horizontal)
+      AllowsPitch           = Yes
+      ControlledWeaponSlots = PRIMARY
+    End
+    AutoAcquireEnemiesWhenIdle = Yes
+  End
+;----- Movement -----
+Locomotor			= SET_NORMAL BattleDroneLocomotor
+Locomotor			= SET_PANIC BattleDronePanicLocomotor   ;used for repairing master (zippy)
+Behavior			= PhysicsBehavior ModuleTag_05
+	Mass			= 50.0
+	KillWhenRestingOnGround		= Yes
+	AllowBouncing		= No
+End
+
+  Behavior = MaxHealthUpgrade ModuleTag_06
+    TriggeredBy   = Upgrade_AmericaDroneArmor
+    AddMaxHealth  = 50.0
+    ChangeType    = ADD_CURRENT_HEALTH_TOO   ;Choices are PRESERVE_RATIO, ADD_CURRENT_HEALTH_TOO, and SAME_CURRENTHEALTH
+  End
+
+  Behavior = SlavedUpdate ModuleTag_07
+    GuardMaxRange = 35      ;How far away from master I'm allowed when master is idle (doesn't wander)
+    GuardWanderRange = 35   ;How far away I'm allowed to wander from master while guarding.
+    AttackRange = 75        ;How far away from master I'm allowed when master is attacking a target.
+    AttackWanderRange = 10  ;How far I'm allowed to wander from target.
+    ScoutRange = 75         ;How far away from master I'm allowed when master is moving.
+    ScoutWanderRange = 10   ;How far I'm allowed to wander from scout point.
+    RepairRange = 8         ;How far I can zip around while repair (only moves when he stops welding)
+    RepairMinAltitude = 18.0   ;My minimum repair hover altitude.
+    RepairMaxAltitude = 24.0   ;My maximum repair hover altitude.
+    RepairRatePerSecond = 10.0 ;How many health points can I repair per second.
+    RepairWhenBelowHealth% = 60 ;How low should my master's health be (in %) before I should prioritize repairing.
+    RepairMinReadyTime = 300
+    RepairMaxReadyTime = 750
+    RepairMinWeldTime = 250
+    RepairMaxWeldTime = 500
+    RepairWeldingSys = BlueSparks
+    RepairWeldingFXBone = Muzzle02
+    StayOnSameLayerAsMaster = Yes
+  End
+;----- Damage & Destruction -----
+Explosion				= TWLT070,S_BANG48,S_BRNL58,S_CLSN58,S_TUMU60
+  Behavior = DestroyDie ModuleTag_08
+    DeathTypes = ALL
+  End
+  Behavior                 = CreateObjectDie  ModuleTag_09
+    DeathTypes = ALL
+    CreationList      = OCL_AmericaBattleDroneExplode
+  End
+  
+  Behavior                 = TransitionDamageFX ModuleTag_10
+    ReallyDamagedParticleSystem1 = Bone:Smoke RandomBone:Yes PSys:SmokeSmallContinuous01
+    ReallyDamagedFXList1 = Loc: X:0 Y:0 Z:0 FXList:FX_BattleDroneDamageTransitionSmall
+  End
+  
+  Behavior                 = FXListDie ModuleTag_11
+    DeathTypes = ALL
+    DeathFX           = FX_AmericaBattleDroneExplode
+  End
+
+  Behavior = UpgradeDie  ModuleTag_12
+    ;This frees the object based upgrade for the producer object.
+    DeathTypes = ALL
+    UpgradeToRemove     = Upgrade_AmericaBattleDrone ModuleTag_13
+  End
+
+  Behavior = FlammableUpdate ModuleTag_21
+    AflameDuration = 5000         ; If I catch fire, I'll burn for this long...
+    AflameDamageAmount = 3       ; taking this much damage...
+    AflameDamageDelay = 500       ; this often.
+  End
+
+  Geometry = CYLINDER
+  GeometryMajorRadius = 5
+  GeometryMinorRadius = 5
+  GeometryHeight = 10.0     
+  GeometryIsSmall = Yes 
+  Shadow = SHADOW_VOLUME
+  ShadowSizeX = 89  ; minimum elevation angle above horizon. Used to limit shadow length
+
+End
+;----- Text -----
+UIName				= Name:Drone_Flyer_Gun
+Name				= Gun Flyer Drone
+Prerequisite=GAAIRC
+;Strength=225
+;Category=AirPower
+;Armor=light
+;TechLevel=-1
+;Sight=2
+;RadarInvisible=yes
+;Landable=yes
+;MoveToShroud=yes
+;Dock=GAAIRC,NAHPAD,GAHPAD
+;PipScale=Ammo
+;Speed=14
+;PitchSpeed=.16
+;Cost=1000
+;Points=20
+;ROT=5
+;Ammo=12
+;Crewed=yes
+;GuardRange=30
+;Maxdebris=2
+;VoiceSelect=30-I000,30-I002,30-I004,30-I006
+;VoiceMove=30-I014,30-I016,30-I018,30-I022
+;VoiceAttack=30-I022,30-I030,30-I034,30-I036
+;Locomotor={4A582746-9839-11d1-B709-00A024DDAFD1}
+;MovementZone=Fly
+;ThreatPosed=15	; This value MUST be 0 for all building addons
+;DamageParticleSystems=SparkSys,SmallGreySSys
