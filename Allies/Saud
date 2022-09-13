@@ -1,0 +1,25 @@
+
+[SAOilDerrick_2]
+;----- Text -----
+UIName				= Name:
+Name					= Oil Derrick Upgrade
+Image					= 
+Prerequisite=NATECH,PROC
+TechLevel=10
+Armor=wood
+Sight=1
+Owner					= Saudis
+Cost=750
+Points=30
+Power=-20
+Crewed=no
+Capturable=no
+Explosion=TWLT070,S_BANG48,S_BRNL58,S_CLSN58,S_TUMU60
+PowersUpBuilding=natech
+PowersUpToLevel=-1
+ThreatPosed=0	; This value MUST be 0 for all building addons
+BuildCat=Resource
+;ProduceCashStartup=0
+;ProduceCashAmount=50 ; Amount every Delay
+;ProduceCashDelay=100 ; Frame delay between Amounts
+;BuildLimit=1
