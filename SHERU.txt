@@ -50,18 +50,6 @@ Reload=400
 PipScale=Ammo
 Size=3
 
-[ChaosGun]
-Damage				= 1000
-ROF				= 75
-Range				= 12
-MinimumRange			= 6
-Projectile			= Shell120mmPsych
-Speed				= 10
-Warhead				= PsychGasCreate2
-Report				= CannonShootn			; ApocalypseAttackGround
-Anim				= CannonShoot
-Bright				= yes
-Lobber				= yes
 
 ; SE2K0014
 [SE2K0014]
