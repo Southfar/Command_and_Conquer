@@ -26,7 +26,7 @@ Buildable trains, train tracks
 wolfpack
 - Assault Tank - Hmmm. This could be the name of some tank, just like the Pike is the Siege Tank. Perhaps Mammoth Assault Tank? 
 - Phalanx - There is an Hoplite, isn't there? Or did we take it out? It should be in there. I think I took it out and didn't even realize the connection to the term "Legionary". Phalanx itself is unused as a unit/weapon/structure name, although it was used before and there may still be applications for it. 
-- Sonic Mech - nerp. Sonic is a X³ tech, mecha are EA. Although that is not set in stone... 
+- Sonic Mech - nerp. Sonic is a XÂ³ tech, mecha are EA. Although that is not set in stone... 
 - Ultima Mech - well, this can be the HERO Mecha. And I just had the idea that this could be where we plug the Rainbow Railgun, too. 
 - Orca Interceptor - no. Valkyrie Interceptor exists, but Orca is not a valid mod aircraft class. 
 - Mega Vulcan - wouldn't know how to implement this. Not from a technical side, but I mean... how can there be a mega version of either the vulcan cannon (allies) or sentry gun (EA)? Maybe a multi-gun setup, but what would its role be? Seems boring and superfluous. 
@@ -54,26 +54,6 @@ wolfpack
 - 4TNK - 
 - 2TNK - 
 - WEEDGUY - 
-
-Vulcan tank, not sure if Allies should have this. Would be match to Shilka/Tunguska?
-[AlliesVulcanTank]
-Name=Vulcan Tank
-Primary=TankVulcanCannon	; mainly AA weapon
-
-CruiseLauncher: 
-[CruiseMissileLauncher]
-Projectile=CruiseMissile
-
-Single-target meteor weapon: 
-Meteor Strike
-[MeteorFlare]
-Projectile=Invisible
-Warhead=MeteorMaker
-
-Meteor Storm
-[MeteorStormFlare]
-Projectile=MeteorContainer;MeteorContainerVeryHighInvisible
-Range=99 ; why?
 
 Ion Storm
 [ThunderstormWeapon]
