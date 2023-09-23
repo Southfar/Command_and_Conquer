@@ -168,40 +168,6 @@ DetectRange=10
 Crewed=no
 Crashable=no
 
-*********************
-*** Tripod **********
-*********************
-
-; alien tri-pod
-[TRIP]
-UIName=Name:TRIP
-Name=Alien Tri-pod
-
-Primary=TripodRaygun	; heat ray
-Secondary=DeadMist
-
-ElitePrimary=TripodRaygunE
-EliteSecondary=DeadMistE
-
-DistributedFire=yes
-
-; Chaos Laser
-[TripodRay]
-DistributedWeaponFire=yes
-Projectile=TripodRayLine
-IsLaser=yes
-LaserInnerColor=255,255,0
-LaserOuterColor=190,100,0
-LaserOuterSpread=0,0,0
-Warhead=TripodRay
-
-; Chaos Laser Proj
-[TripodRayLine]
-
-; Chaos Laser WH
-[TripodRay]
-;InfDeath=5
-InfDeathAnim=InfantryBurnDeath
 
 ********************
 *** Brain Tripod ***
