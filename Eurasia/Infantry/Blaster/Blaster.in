@@ -1,0 +1,410 @@
+;******************************************************************************
+;*** Mad Bomber ***************************************************************
+;******************************************************************************
+; This is related to the Grenadier, Machinist, Saboteur, Spy and, of course, Bomber in general. 
+; The Machinist deals some damage to a building, sacrificing himself, if it is not damaged enough (otherwise, he captures it). 
+; Saboteur and Spy have disabling, but not destructive, effects on buildings (except for Fake structures). 
+; The "Bomber" is the synthesis of the D2K Saboteur, TW Fanactic, RA2 Terrorist, Gen/ZH Terrorist, TDR Martyr. 
+; The lowest level of that unit simply runs at the target and blows himself up, dealing some damage. 
+; The next stage runs to the target and blows it up, sacrificing himself. 
+; The next stage runs to the target, attaching C4 which will destroy any building. 
+; The vanilla Crazy Ivan (here: Mad Bomber) can attach bombs to any type of target, but isn't as devastating as C4. 
+; This unit is a Disabler! It is differentiated from the Bomber! 
+; Crazy Ivan is the hero of, and derived from, this. 
+
+; There are two advancement lines to this class: a) sacrifice and survival, b) targeting filter
+; Soviets: 
+; Bomb-throwing anarchists! Crazy Ivans as regular units have become Mad Bombers. Crazy Ivan is now a Mad Bomber Hero. 
+; They can target any kind of target, attach bombs, and are not sacrificed in the process. 
+; Nod: 
+; 
+; Brotherhood: 
+; They have access both to the Mad Bomber 
+; The weapons of all of these units are the "Explosives" line of weapons. 
+; The "Saboteur" and "C4" features are not rendered by weapons. They are hardcoded. 
+; However, there is a weapon ("FakeC4" in vanilla) used to render the Chrono Commando's C4 ability. 
+; There is one more unit which has an innate suicidal building-damaging ability. This is the Engineer (now Machinist). 
+; He can enter a building and deal %dmg to it. 
+; These units combine some characteristics from the "Spy" class, in that they notoriously have stealth features. 
+; They also have a direct relation with the Grenadier class, in that both deploy explosives. 
+; The transmission here is by the Demoman class. 
+
+;------------------------------------------------------------------------------
+[InfantryTypes]
+;CDF67EA15E84F; These are old list line strings. 
+;3F278BAEC5D35; Kept here for legacy/checking purposes. 
++				= Bomber_a		; Terrorist (suicide bomber, can target anything). Formerly used ID NDBomber. 
++				= Bomber_a0		; Terrorist with HP Upgrade 1 (75). 
++				= Bomber_a1		; Terrorist with HP Upgrade 2 (120). This raises the HP to that of the Terrorist (Gen/ZH). 
+;+				= Bomber_a2		; Terrorist with HP Upgrade 3 (125). 
++				= Bomber_a2		; Terrorist with HP Upgrade 3 (250). 
+;-----
++				= Bomber_b		; Saboteur (suicide bomber, can target buildings only, destroys them). This branches off Bomber_a series by having much higher damage, but building-only targeting filter. Formerly used ID NDBomber_2. 
++				= Bomber_b0		; C4 Bomber (surviving bomber, can target buildings only, destroys them). Formerly used ID NDBomber_3. 
++				= Bomber_a2b0	; C4 Bomber
+
++				= Bomber_ba		; Saboteur with Disguise Upgrade. 
++				= Bomber_b0a	; C4 Bomber with Disguise Upgrade. 
++				= Bomber_bb		; Saboteur with Cloak Upgrade. 
++				= Bomber_b0b	; C4 Bomber with Cloak Upgrade. 
+;-----
++				= MadBomber			; Crazy Ivan 
++				= MadBomber_e3			; Mad Bomber Elite
++				= MadBomber_e4			; Mad Bomber Master
++				= MadBomber_C			; Chrono Mad Bomber
++				= MadBomber_S			; Stealth Mad Bomber
++				= CrazyIvan
+;-----
+
++				= Bomber_A4		; Bomber with Toxin Upgrade. 
++				= Bomber_A4.2		; Bomber with Toxin > Acid Upgrade. 
++				= Bomber_A4.2b		; Bomber with Toxin > Mutagen Upgrade. 
++				= Bomber_A4.2c		; Bomber with Toxin > Psychedelic Upgrade. 
+Others? 
++				= Bomber_A4b		; Bomber with Nuke Upgrade. 
++				= Bomber_A5		; Bomber with Cybernetic Legs Upgrade. 
+
+;------------------------------------------------------------------------------
+[InfantryTypes]
++				= NDBomber
++				= NDBomber_2
++				= NDBomber_3
+
+;------------------------------------------------------------------------------
+; Terrorist
+; Formerly Blaster. 
+[Bomber]:[Civilian]
+;----- Text -----
+UIName				= Name:Terrorist
+Name				= Terrorist
+;----- Availability -----
+Owner				= Africans,Arabs,Iranians,ScorpionCell,CobraCell,SpiderCell
+TechLevel			= 5
+Prerequisite			= Camp,Any_Radar
+Cost				= 200
+AllowedToStartInMultiplayer	= no
+;----- AI -----
+Category			= Soldier
+LeadershipRating		= 3
+ThreatPosed			= 0
+SpecialThreatValue		= 1
+;----- Base Attributes -----
+;Strength			= 50					; 75 moved to Terrorist_2. - VXS 21/5/15 ; Changed on 11/29 from 50 to 75.
+;----- Weapons -----
+Primary				= Suicide
+IFVMode				= BLAST
+CanPassiveAquire		= no					; Won't try to pick up own targets
+CanRetaliate			= no					; Won't fire back when hit
+;----- Deploy -----
+Deployer			= yes
+DeployFire			= yes
+;----- Armor -----
+Armor=flak
+;----- Perception -----
+Sight				= 9
+;----- GFX -----
+Pip				= red
+OccupyPip			= PersonRed
+;----- Scoring -----
+Points				= 5
+;----- SFX -----
+VoiceSelect			= TerroristSelect
+VoiceMove			= TerroristMove
+VoiceAttack			= TerroristAttackCommand
+VoiceFeedback			= TerroristFear
+VoiceSpecialAttack		= TerroristAttackCommand
+VoiceDeploy			= TerroristAttackCommand
+DieSound			= TerroristDie
+CrushSound			= InfantrySquish
+DeploySound			= TerroristAttackCommand
+;----- Movement -----
+Speed				= 6
+MovementZone			= InfantryDestroyer
+;----- Damage & Destruction -----
+Explodes			= yes
+DeathWeapon			= PackExplosives
+
+;------------------------------------------------------------------------------
+; Cuban Terrorist
+[Bomber_2]:[Bomber]
+;----- Body -----
+Strength			= 75
+
+;------------------------------------------------------------------------------
+; Brotherhood Terrorist
+[Blaster_3]:[Blaster_2]
+;----- Gfx -----
+Image				= infy_blast_martyr_fn_v2
+;----- Body -----
+Strength			= 120
+
+;------------------------------------------------------------------------------
+; Nod Bomber
+; Formerly NDBomber. 
+[Bomber_2]:[Bomber]
+;----- Name -----
+UIName				= Name:Fanatic
+Name				= Fanatic
+;----- Body -----
+Strength				= 250; HP_Fanatic,xxx is 150 ppax, multiplied by 1.666... is 250. 
+;----- Weapons -----
+Primary				= BomberDetonate
+IFVMode				= BLAST
+;----- Armor -----
+Armor				= none
+TypeImmune			= yes
+;----- Damage & Destruction -----
+DeathWeapon= 
+
+;------------------------------------------------------------------------------
+; Mad Bomber - Soviet Demoman
+; Formerly MadBomber.
+; Subsumes Bomberman_3 (SABO (Saboteur), LaoTze 25)
+; Buildings only, and timed damaging. Survives, disguised. 
+[Bomber_3]:[Bomber_2]
+;----- Text -----
+UIName				= Name:Bomber
+Name				= Mad Bomber
+;----- Taxonomy -----
+Ivan=yes;needed to differentiate from Bomber, which is C4, and engineer
+;Saboteur			= yes
+;----- Gfx -----
+
+;----- Body -----
+Strength			= 100				; 125
+;----- Weapons -----
+Primary=MakeupKit
+Secondary=SaboBomber
+
+Primary				= IvanBomber
+Secondary			= Grenade
+ElitePrimary			= IvanBomber_e3
+EliteSecondary			= IvanBomber_e3
+
+;ElitePrimary=IvanBomber2
+ElitePrimary=IvanBomberE 
+EliteSecondary=IvanBomberE 
+IFVMode= MAD
+;----- Armor -----
+Armor=none
+Sight=6
+Speed=4
+;----- UI -----
+;AttackFriendlies=yes ; when scanning for targets, won't differentiate between allied or not, and also doesn't need control pressed to get attack cursor on friends
+AttackCursorOnFriendlies=yes ; subset of AttackFriendlies.  Accept a command to attack, but don't consider in threat scan
+Pip				= red
+OccupyPip			= PersonRed
+;----- Availability -----
+Owner				= Soviet,Russians,Belorussians,Ukrainians,Kazakhs,SteelCossacks,BattleKings,PsiCorps,BlackGuards,BlackHands
+RequiredHouses=Africans; LaoTze 25
+TechLevel			= 5
+Prerequisite			= SUBarracks,SURadar
+AllowedToStartInMultiplayer=no
+Cost				= 600
+;Soylent=150
+
+Owner				= Nod
+TechLevel			= 2
+Prerequisite			= NAHAND,NARADR;BARRACKS
+Cost				= 900
+AllowedToStartInMultiplayer	= no
+;----- Score -----
+Points				= 30
+;----- SFX -----
+VoiceSelect			= SaboteurSelect
+VoiceMove			= SaboteurMoveCommand
+VoiceAttack			= SaboAttackCommand
+;VoiceFeedback			= CrazyIvanFear
+VoiceSpecialAttack		= SaboteurAttackCommand
+DieSound			= CrazyIvanDie
+
+ThreatPosed=15
+;----- Load -----
+Deployer=yes
+UndeployDelay=20
+;;----- Veterancy -----
+;Trainable=no
+;----- Damage & Destruction -----
+Explodes=yes
+DeathWeapon=ExplosivesKit_ ; SaboBombx
+DeathWeaponDamageModifier=0.6
+
+CanPassiveAquire=no
+CanRetaliate=no
+Sight=3
+Speed=4
+Cost=900
+Points=30
+IsSelectableCombatant=yes
+
+ThreatPosed=20
+
+GuardRange=5
+DefaultToGuardArea=yes
+CloseRange=yes
+
+CanDisguise=yes
+PermaDisguise=yes
+SpecialThreatValue=1
+PreventAttackMove=yes
+
+
+;----- Perception -----
+Sight				= 4				; 6
+Speed				= 4
+
+
+VeteranAbilities=STRONGER,FIREPOWER,ROF,SIGHT,FASTER
+EliteAbilities=SELF_HEAL,STRONGER,FIREPOWER,ROF
+Cost=500
+Points=5
+GuardRange=9
+
+;------------------------------------------------------------------------------
+; Bomber Mad Cloak
+; Available from stealing Asian tech. 
+; Formerly MadBomber_S. 
+[
+
+;------------------------------------------------------------------------------
+; Nod Bomber
+; Formerly NDBomber_2. 
+; Buildings only, and instantly absolutely destructive. Sacrifices. 
+[Bomber_b]:[Bomber_a]
+;----- Text -----
+Name= Pilgrim Bomber
+;----- Procuration -----
+Owner				= Nod
+Prerequisite			= NAHAND,NARADR
+Cost				= 600
+;----- Weapons -----
+Primary= none
+Saboteur			= yes
+;C4				= yes
+Sight=6
+Speed=4
+Points=30
+;----- AI -----
+IsSelectableCombatant		= yes
+ThreatPosed			= 15
+;----- SFX -----
+VoiceSelect			= NodSpySelect
+VoiceMove			= NodSpyMoveCommand
+VoiceAttack			= NodSpyAttackCommand
+VoiceFeedback			= 
+VoiceSpecialAttack		= NodSpyAttackCommand
+DieSound			= ;CrazyIvanDie
+
+;------------------------------------------------------------------------------
+; Formerly NDBomber_3. 
+; Buildings only, and instantly absolutely destructive. Survives, cloaked. 
+[Bomber_b2]:[Bomber_b]
+;----- Name -----
+Name				= Pilgrim Bomber Elite
+;----- Weapons -----
+Saboteur			= no
+C4				= yes
+IFVMode				= BLAST_SURVIVOR					; Variant of DETONATOR where the user survives, even in a Rookie IFV. 
+
+VeteranAbilities=STRONGER,FIREPOWER,ROF,SIGHT,FASTER,CLOAK	; we're puttin CLOAK to Vet for the reasons mentioned in the comment to the Stealth fighter's Veteran, so take a look there. 
+EliteAbilities=SELF_HEAL,STRONGER,FIREPOWER,ROF,CLOAK
+
+;------------------------------------------------------------------------------
+; RA2/YR's CIVAN (Chrono Ivan)
+[MadBomber_C]:[MadBomber]
+;----- Text -----
+UIName=Name:CIVAN
+Name=Chrono Ivan
+;----- Availability -----
+;RequiresStolenSovietTech=yes
+Crushable=no
+Strength=100
+TechLevel=9
+Pip=red
+Sight=8
+Speed=6
+Cost=1750
+Soylent=500
+Points=50
+;----- Sfx -----
+ChronoInSound=ChronoLegionTeleport
+ChronoOutSound=ChronoLegionTeleport
+Locomotor={4A582747-9839-11d1-B709-00A024DDAFD1}
+;Locomotor={4A582744-9839-11d1-B709-00A024DDAFD1}; <-Walk  teleport->{4A582747-9839-11d1-B709-00A024DDAFD1}
+PhysicalSize=1
+MovementZone=Infantry
+ThreatPosed=25	; This value MUST be 0 for all building addons
+SpecialThreatValue=1
+VeteranAbilities=STRONGER,FIREPOWER,ROF,SIGHT,FASTER
+EliteAbilities=SELF_HEAL,STRONGER,FIREPOWER,ROF
+AttackCursorOnFriendlies=yes
+MoveToShroud=no
+IFVMode=7
+Teleporter=yes;
+
+;------------------------------------------------------------------------------
+; Mad Bomber Hero
+; This gets the target filter of the Mad Bomber (can target any type), 
+; and the damage of C4. 
+[CrazyIvan]:[MadBomber]
+;----- Text -----
+UIName				= Name:CrazyIvan
+Name				= Crazy Ivan					; locked
+;----- Body -----
+Strength			= 180
+;----- Weapons -----
+Primary				= IvanDynamiteKit
+Secondary			= IvanDynamiteToss
+
+ElitePrimary			= IvanDynamiteKit_E
+EliteSecondary			= IvanDynamiteToss_E
+IFVMode				= IVAN
+;----- Armor -----
+Armor				= resistance_explosion30; Reduces explosion damage by 30%. 
+;----- Availability -----
+TechLevel			= 9
+BuildLimit= 1
+Speed				= 8
+Cost				= 1500
+Points				= 60
+VoiceSelect=CrazyIvanSelect
+VoiceMove=CrazyIvanMove
+VoiceAttack=CrazyIvanAttackCommand
+VoiceFeedback=CrazyIvanFear
+VoiceSpecialAttack=CrazyIvanAttackCommand
+DieSound=CrazyIvanDie
+ThreatPosed			= 35
+
+TechLevel=9 
+Cost=1000 
+Soylent=250 
+Disguised=yes	; the old way. We'll do it this way because we cannot have him use a weapon which selects disguises. 
+
+;------------------------------------------------------------------------------
+; The evil Cuban Bomber
+; (formerly Terrorist)
+; Formerly Blaster_4. 
+[Bomber_4]
+;----- Name -----
+UIName				= Name:Bomber
+Name				= Bomber Lv. 4
+;----- Procuration -----
+Prerequisite			= SUBarracks,SUTechCenter
+Cost				= 1500
+Soylent				= 200
+;----- Body -----
+Strength			= 75							; changed on 11/29 from 50 to 75
+;----- Weapons -----
+Primary				= MakeupKit						; virtual weapon that picks disguise
+Secondary			= TerrorBomb
+IFVMode				= BLAST_SURVIVOR					; Variant of DETONATOR where the user survives, even in a Rookie IFV. 
+Saboteur			= no
+C4				= yes
+;----- Armor -----
+Armor=flak
+;----- Procuration -----
+Owner				= Nod
+TechLevel=5
+;----- Perceptibility -----
+CanDisguise			= yes							; I appear differently on other people's computers
+PermaDisguise			= yes							; and I appear that way always (Mirage Tank will be Can but not Perma)
