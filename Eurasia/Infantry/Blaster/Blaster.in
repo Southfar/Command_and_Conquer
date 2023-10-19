@@ -185,6 +185,10 @@ EliteSecondary			= IvanBomber_e3
 ElitePrimary=IvanBomberE 
 EliteSecondary=IvanBomberE 
 IFVMode= MAD
+CloseRange=yes
+CanPassiveAquire=no
+CanRetaliate=no
+PreventAttackMove=yes
 ;----- Armor -----
 Armor=none
 Sight=6
@@ -217,8 +221,6 @@ VoiceAttack			= SaboAttackCommand
 ;VoiceFeedback			= CrazyIvanFear
 VoiceSpecialAttack		= SaboteurAttackCommand
 DieSound			= CrazyIvanDie
-
-ThreatPosed=15
 ;----- Load -----
 Deployer=yes
 UndeployDelay=20
@@ -228,9 +230,15 @@ UndeployDelay=20
 Explodes=yes
 DeathWeapon=ExplosivesKit_ ; SaboBombx
 DeathWeaponDamageModifier=0.6
+;----- Stealth -----
+CanDisguise=yes
+PermaDisguise=yes
+;----- AI -----
+ThreatPosed=15;20
+GuardRange=5;9
+DefaultToGuardArea=yes
+SpecialThreatValue=1
 
-CanPassiveAquire=no
-CanRetaliate=no
 Sight=3
 Speed=4
 Cost=900
@@ -239,14 +247,7 @@ IsSelectableCombatant=yes
 
 ThreatPosed=20
 
-GuardRange=5
-DefaultToGuardArea=yes
-CloseRange=yes
 
-CanDisguise=yes
-PermaDisguise=yes
-SpecialThreatValue=1
-PreventAttackMove=yes
 
 
 ;----- Perception -----
@@ -258,18 +259,19 @@ VeteranAbilities=STRONGER,FIREPOWER,ROF,SIGHT,FASTER
 EliteAbilities=SELF_HEAL,STRONGER,FIREPOWER,ROF
 Cost=500
 Points=5
-GuardRange=9
 
 ;------------------------------------------------------------------------------
 ; Bomber Mad Cloak
 ; Available from stealing Asian tech. 
 ; Formerly MadBomber_S. 
-[
+[Bomber_
 
 ;------------------------------------------------------------------------------
-; Nod Bomber
+; Nod Bomber -- Pilgrim of Fire
 ; Formerly NDBomber_2. 
 ; Buildings only, and instantly absolutely destructive. Sacrifices. 
+; This already has the upgrade "cloak temporaire". 
+; When he has full ammo, he will fire a weapon which converts him to the version which can be deployed to gain stealth. 
 [Bomber_b]:[Bomber_a]
 ;----- Text -----
 Name= Pilgrim Bomber
@@ -278,12 +280,17 @@ Owner				= Nod
 Prerequisite			= NAHAND,NARADR
 Cost				= 600
 ;----- Weapons -----
-Primary= none
+Primary= CloakKit; none
+AutoFire= yes
+AutoFire.TargetSelf= yes
 Saboteur			= yes
 ;C4				= yes
 Sight=6
 Speed=4
 Points=30
+;----- Load -----
+Ammo= 5
+InitialAmmo= 0
 ;----- AI -----
 IsSelectableCombatant		= yes
 ThreatPosed			= 15
@@ -296,12 +303,18 @@ VoiceSpecialAttack		= NodSpyAttackCommand
 DieSound			= ;CrazyIvanDie
 
 ;------------------------------------------------------------------------------
+; Deploying him re-converts him to the charging version, but now with a temporary cloak (AE) applied. 
+[Bomber_bc]
+
+;------------------------------------------------------------------------------
 ; Formerly NDBomber_3. 
-; Buildings only, and instantly absolutely destructive. Survives, cloaked. 
+; Buildings only, and instantly absolutely destructive. Survives. 
+; This already has the upgrade "cloak permanent". 
 [Bomber_b2]:[Bomber_b]
 ;----- Name -----
 Name				= Pilgrim Bomber Elite
 ;----- Weapons -----
+Primary= none
 Saboteur			= no
 C4				= yes
 IFVMode				= BLAST_SURVIVOR					; Variant of DETONATOR where the user survives, even in a Rookie IFV. 
