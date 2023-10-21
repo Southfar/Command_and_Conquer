@@ -1,69 +1,9 @@
-[GenInfantry]
-Score=2
-StormDamage=138
-UnitGroup=FromBarracks
-TurnRate=0.2
-;TurretAttach=InfantryGun
-Primary=InfantryGun
-Terrain = Rock, Sand, NBRock, InfRock, Ramp
-BuildTime = 87
-Size = 1
-Armour = None, 50, InfRock
 
-;----- Base Attributes -----
-;Health					= 600
-Strength				= 75
 
-Infantry = true
-CanBeSuppressed = TRUE
-AiFoot = TRUE
-TechLevel = 1
-ReinforcementValue = 1
-Crushable = TRUE
-ChaosEffect = SmallChaosFX
-HawkEffect = SmallHawkFX
-TastyToWorms = TRUE
-WormAttraction = 3
-CanMoveAnyDirection = TRUE
-GetsHeightAdvantage = FALSE
-CanBeDeviated = FALSE
-CanBeRepaired = FALSE
-AIThreat = 20
-
-;[ATInfantry]
-[ATGunner]
-House=Atreides
-PrimaryBuilding=ATBarracks
-Cost=60
-Speed=6.0
-ViewRange = 7
-VeterancyLevel = 5 
-Health = 800
-ExtraDamage = 50  
-VeterancyLevel = 10
-CanSelfRepair = 1
-VeterancyLevel = 20
-Elite = TRUE
-ExtraArmour = 50
-
-[HKLightInf]
-House = Harkonnen 
-PrimaryBuilding = HKBarracks
-Cost = 50
-Speed=4.0
-ViewRange = 6
-WormAttraction = 4
-VeterancyLevel = 3 
-ExtraDamage = 25
-VeterancyLevel = 10
-CanSelfRepair = 1  
-VeterancyLevel = 20
-ExtraDamage = 50  
-ExtraArmour = 50
 
 ; Harkonnen Missilier
-[HKMissilier];[HKTrooper]
-ProtoTypes			= GenInfantry
+; HKTrooper (EBFD)
+[HKMissilier]
 House = Harkonnen
 StormDamage=74
 PrimaryBuilding = HKBarracks
@@ -103,98 +43,20 @@ VeterancyLevel = 20
 ExtraDamage = 50  
 ExtraArmour = 50  
 
-; Atreides Mortarman
-[ATKindjal]
-Score				= 2
-DeployInf = TRUE
-House = Atreides
-StormDamage=74 
-;StormDamage=10
-PrimaryBuilding = ATBarracks
-UnitGroup = FromBarracks
-Terrain = Rock, Sand, NBRock, InfRock, Ramp
-UpgradedPrimaryRequired = TRUE
-Cost = 150
-BuildTime = 144
-Size = 1
-Speed = 4.0      
-TurretAttach = ATKindjalGun, ATKindjalBigGun 
-TurnRate = 0.2     
-Armour = None, 50, InfRock
-;Health = 600
-Strength			= 75
-Infantry = true
-ViewRange = 10
-AiFoot = TRUE
-TechLevel = 4
-ReinforcementValue = 3
-Crushable = TRUE
-ChaosEffect = SmallChaosFX
-HawkEffect = SmallHawkFX
-TastyToWorms = TRUE
-WormAttraction = 3
-CanMoveAnyDirection = TRUE
-CanBeDeviated = FALSE
-CanBeRepaired = FALSE
-AIThreat = 50
-VeterancyLevel = 2 
-Health = 800
-ExtraDamage = 50  
-VeterancyLevel = 10
-CanSelfRepair = 1
-VeterancyLevel = 20
-Elite = TRUE
-ExtraDamage = 100  
 
-; Ordos Mortarman
-[ORMortar]
-Score = 2
-DeployInf = TRUE
-House = Ordos
-StormDamage=74 
-PrimaryBuilding = ORBarracks
-UnitGroup = FromBarracks
-Terrain = Rock, Sand, NBRock, InfRock, Ramp
-UpgradedPrimaryRequired = TRUE
-Cost = 100
-BuildTime = 144
-Size = 1
-Speed = 4.0      
-TurnRate = 0.2     
-TurretAttach = ORMortarInfGun, ORMortarInfBigGun
-Armour = None, 50, InfRock
-;Health				= 700
-Strength			= 87.5
-Infantry = true
-ViewRange = 8
-AiFoot = TRUE
-TechLevel = 4
-ReinforcementValue = 3
-Crushable = TRUE
-ChaosEffect = SmallChaosFX
-HawkEffect = SmallHawkFX
-TastyToWorms = TRUE
-WormAttraction = 3
-CanMoveAnyDirection = TRUE
-CanBeDeviated = FALSE
-CanBeRepaired = FALSE
-AIThreat = 40
-VeterancyLevel = 4 
-CanSelfRepair = 1 
-VeterancyLevel = 10
-ExtraArmour = 50  
-VeterancyLevel = 20
-ExtraDamage = 50  
 
-[Pistol2B751579A596D];[ORMortarInfGun];[HKEngineerGun]
-Bullet = Pistol_B
-ReloadCount = 45
-TurretDisableIfUnitDeployed = TRUE
-
-[PistolDFA691C7C7DE5];[ATKindjalGun]
+; ATKindjalGun (EBFD)
+; Formerly PistolDFA691C7C7DE5. 
+[AutomaticPistol]
 Bullet = Pistol_B
 ReloadCount = 50
 TurretDisableIfUnitDeployed = TRUE
+
+; ORMortarInfGun & HKEngineerGun (EBFD)
+; Formerly Pistol2B751579A596D. 
+[AutomaticPistol_2]
+ReloadCount = 45
+
 
 ;[ATInfGun]
 ;[HKLightInfantryGun]
