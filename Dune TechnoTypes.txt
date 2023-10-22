@@ -69,19 +69,7 @@ Warhead				= LMG_W
 ROF				= 30
 ReloadCount			= 30
 
-[KindjalRocketLauncher];[ATKindjalBigGun]
-TurretMuzzleFlash  = Muzzle2
-Bullet = Kindjal_B
-ReloadCount = 50
-TurretDisableIfUnitUndeployed = TRUE
 
-[Mortar];[ORMortarInfBigGun]
-TurretMinXRotation = -90.0 
-TurretMaxXRotation = -30.0
-TurretXRotationAngle = 10.0
-Bullet = Mortar_B    
-ReloadCount = 45
-TurretDisableIfUnitUndeployed = TRUE
 
 [LMG_B]
 Speed = -1
@@ -91,19 +79,3 @@ Damage = 219
 Warhead = LMG_W
 ExplosionType = mghit
 Shot = TRUE
-
-[LMG_W]
-Verses				= 100%,?%,?%,70%,50%,40%,?%,?%,100%
-Versus.None			= 100
-Versus.Earplugs 		= 100
-Versus.BPV 			= 70
-Light = 70
-Medium = 50
-Heavy = 40
-Concrete = 100
-Walls = 20
-Building = 5
-CY = 5
-Harvester = 5
-Invulnerable = 0
-Aircraft = 45
