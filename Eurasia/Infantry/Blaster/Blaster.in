@@ -421,3 +421,75 @@ TechLevel=5
 ;----- Perceptibility -----
 CanDisguise			= yes							; I appear differently on other people's computers
 PermaDisguise			= yes							; and I appear that way always (Mirage Tank will be Can but not Perma)
+
+;------------------------------------------------------------------------------
+; Scottish Grenadier
+; Formerly SCTGrenadier. 
+; This is Demoman. 
+; This unit can only be hired as a mercenary. 
+; Clearly, he has some class features of a Grenadier (launches grenades), 
+; but he also has some class features of a Blastman (plants explosives), 
+; as well as meelee features (possibly resembling a Warrior or Barbarian or Berserker or something of that sort of nature) 
+; that do not readily fit any class. 
+; He does not have any class features of a Spy (as the previous ones do). He cannot sap, and he cannot use any form of stealth. 
+; Higher tiers beyond this one may re-combine it with the Spy. 
+;
+; He has two main attack modes: 
+; - launches grenades
+; - launches "proxy mines"
+; The proxy mines will be a pain to code, because we want them to turn into IvanBombs on vehicles and buildings, 
+; and proxy mines when impacting on the ground. 
+; When occupying a building, he will trap that building, causing any enemy unit that comes close to trigger explosions. 
+; 
+; The Grenadier and Demoman lines merge in this unit. 
+[Demoman]:[Demoman]
+;----- Name -----
+UIName				= Name:Demoman
+Name				= Demolition Man
+;----- Body -----
+Strength			= 
+;----- Weapons -----
+Primary				= GrenadeLauncher_968F7
+Secondary			= Launcher_
+OccupyWeapon			= GrenadeLauncher_968F7
+
+ElitePrimary			= 
+EliteSecondary			= 
+EliteOccupyWeapon		= 
+
+OpenTransportWeapon		= 0
+IFVMode				= 
+;----- Armor -----
+
+;----- Availability -----
+Owner				= Scots
+DoubleOwned			= yes
+
+Pip=white
+Armor=flak
+TechLevel=2
+Sight=6
+Speed=3
+AllowedToStartInMultiplayer=no
+Cost=1400
+Soylent=0
+Points=25
+ThreatPosed=10 ; This value MUST be 0 for all building addons
+Bombable=yes
+Crushable=yes
+
+; Sniping with a normal bullet
+[Sharpshoot]
+Verses=1000%,600%,250%,0%,0%,0%,1%,1%,1%,1%,100%
+InfDeath=1
+AnimList=PIFF
+ProneDamage=100%
+Bullets=yes
+
+; Sniping with an AP bullet
+[SSASharpshoot]
+Verses=1000%,600%,250%,100%,100%,100%,1%,1%,1%,100%,100%
+InfDeath=1
+AnimList=PIFF
+ProneDamage=100%
+Bullets=yes
