@@ -25,25 +25,25 @@
 
 ;------------------------------------------------------------------------------
 ; Cybernetic Medic
-
-
 ; TechWar v.1.7's cybmedic
 ; Cybernetic Medic - Other names were "cyber-medic" and "nod medic"
-Object Cyborg_Medic
-[Cyborg_Medic]:[Medic]
+; Formerly Cyborg_Medic. 
+[CyborgMedic]
 ;----- Name -----
 UIName				= Name:Cyborg_Medic
-Name				= Cybernetic Medic
-
-;----- Base Attributes -----
-Strength			= 300
+Name				= Cyborg Medic
+;----- Taxonomy -----
+Category=Support
 Cyborg				= yes
+;----- Body -----
+Strength			= 300; 125
 Fearless			= yes
-
+;----- Weapons -----
+Primary=StimKit
 ;----- GFX -----
 ;Image				= CYBORG			; techwar v.1.7
 
-Category=Soldier
+
 Prerequisite=NAHAND
 
 CrushSound=SQUISHY2
@@ -73,26 +73,6 @@ ThreatPosed=15
 ImmuneToVeins=yes
 EliteAbilities=FASTER,STRONGER,FIREPOWER,SCATTER,ROF,SIGHT,SELF_HEAL
 
-[CyborgMedic]
-
-;----- Name -----
-UIName				= Name:CyborgMedic
-Name				= Cyborg Medic
-
-;----- Base Attributes -----
-Strength			= 125
-Cyborg				= yes
-
-;----- AI -----
-Category=Soldier
-
-;----- Weapons -----
-Primary=StimKit
-
-;----- Load -----
-IsSimpleDeployer=yes
-Convert.Deploy=CyborgMedicB
-
 Prerequisite=NAHAND
 CrushSound=SQUISHY2
 Armor=none
@@ -110,6 +90,31 @@ VoiceMove=BOOP
 VoiceAttack=BOOP,RADARDN1
 VoiceFeedback=notify
 VoiceDie			= CyborgDie
+ThreatPosed=0	; This value MUST be 0 for all building addons
+GuardRange=8
+SpecialThreatValue=1
+
+
+; Strogg Cybernetic Medic
+[CYMD]
+Image=LSRCY
+Name=Medical Cyborg
+Category=Soldier
+Prerequisite=NAHAND
+CrushSound=SQUISHY2
+Strength=125
+Armor=none
+TechLevel=4
+Sight=6
+Speed=4
+SelfHealing=yes
+Pip=red
+Owner=NOD
+AllowedToStartInMultiplayer=no
+Cost=600
+Points=5
+VoiceFeedback=
+VoiceDie=DEDMAN1,DEDMAN2,DEDMAN2,DEDMAN4,DEDMAN5,DEDMAN6
 Locomotor={4A582744-9839-11d1-B709-00A024DDAFD1}
 PhysicalSize=1
 MovementZone=Infantry
@@ -117,8 +122,6 @@ ThreatPosed=0	; This value MUST be 0 for all building addons
 GuardRange=8
 SpecialThreatValue=1
 ImmuneToVeins=yes
-
-;------------------------------------------------------------------------------
-[CyborgMedicB]:[CyborgMedic]
-;----- Weapons -----
-Primary=PlagueKit
+VoiceSelect=22-I000,22-I002,22-I006
+VoiceMove=22-I008,22-I010,22-I014,22-I016,22-I020
+VoiceAttack=22-I008,22-I010,22-I012,22-I018
