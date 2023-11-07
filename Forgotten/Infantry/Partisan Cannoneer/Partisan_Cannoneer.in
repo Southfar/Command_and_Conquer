@@ -1,0 +1,42 @@
+;******************************************************************************
+;*** Partisan Cannoneer *******************************************************
+;******************************************************************************
+
+;------------------------------------------------------------------------------
+; Yugoslav Cannoneer Combatant
+; Formerly CannoneerMujahid. 
+; Carl Gustaf Partisan
+[PartisanCannoneer]:[Partisan]
+;----- Text -----
+UIName				= Name:Partisan_Cannoneer
+Name				= Partisan Cannoneer
+;----- Weapons -----
+Primary= HandCannon; CarlGustafCannon
+Secondary= HandCannon_AA
+Elite= HandCannon_E
+ElitePrimary= HandCannon_E; CarlGustafCannon_E
+EliteSecondary= HandCannon_AAE
+OccupyWeapon= HandCannon_Occ
+EliteOccupyWeapon= HandCannon_OccE
+IFVMode= CANNON
+;----- Availability -----
+Owner=Russians,Confederation,Africans,Arabs,YuriCountry
+TechLevel= 3; -1
+Prerequisite=NAHAND,NARADR
+;AllowedToStartInMultiplayer=no
+Strength=100
+Sight=5
+Speed=4
+Cost=300
+Points=5
+IsSelectableCombatant=yes
+VoiceSelect=FlakTroopSelect
+VoiceMove=FlakTroopMove
+VoiceAttack=FlakTroopAttackCommand
+VoiceFeedback=FlakTroopFear
+VoiceSpecialAttack=FlakTroopMove
+DieSound=FlakTroopDie
+MovementZone=InfantryDestroyer
+ThreatPosed=5
+VeteranAbilities=STRONGER,FIREPOWER,ROF,SIGHT,FASTER
+EliteAbilities=SELF_HEAL,STRONGER,FIREPOWER,ROF
