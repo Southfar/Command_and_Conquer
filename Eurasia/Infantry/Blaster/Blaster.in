@@ -261,10 +261,66 @@ Cost=500
 Points=5
 
 ;------------------------------------------------------------------------------
+; Mad Firebomber (Pyromaniac)
+; This instantiates the Firebrand (RedRes), Arsonist (MO). 
+; - Disguised
+; - Target filter: buildings only
+; - Attack not sacrifical
+; 
+[Bomber_3Pyro]:[Bomber_3]
+;----- Text -----
+UIName				= Name:Bomber
+Name				= Bomber Mad Pyro
+;----- Availability -----
+Owner				= Confederation,Brazilians,Cubans,Mexicans,Venezuelans
+
+;------------------------------------------------------------------------------
 ; Bomber Mad Cloak
 ; Available from stealing Asian tech. 
 ; Formerly MadBomber_S. 
-[Bomber_
+[Bomber_3Stlh]:[Bomber_3]
+;----- Text -----
+UIName				= Name:
+Name				= Bomber Mad Cloak
+;----- Stealth -----
+Cloakable				= yes
+
+;------------------------------------------------------------------------------
+; Bomber Mad Cloak Elite
+[Bomber_3Stlh2]:[Bomber_3Stlh]
+
+;------------------------------------------------------------------------------
+; RA2/YR's CIVAN (Chrono Ivan)
+[MadBomber_C]:[MadBomber]
+;----- Text -----
+UIName=Name:CIVAN
+Name=Chrono Ivan
+;----- Availability -----
+;RequiresStolenSovietTech=yes
+Crushable=no
+Strength=100
+TechLevel=9
+Pip=red
+Sight=8
+Speed=6
+Cost=1750
+Soylent=500
+Points=50
+;----- Sfx -----
+ChronoInSound=ChronoLegionTeleport
+ChronoOutSound=ChronoLegionTeleport
+Locomotor={4A582747-9839-11d1-B709-00A024DDAFD1}
+;Locomotor={4A582744-9839-11d1-B709-00A024DDAFD1}; <-Walk  teleport->{4A582747-9839-11d1-B709-00A024DDAFD1}
+PhysicalSize=1
+MovementZone=Infantry
+ThreatPosed=25	; This value MUST be 0 for all building addons
+SpecialThreatValue=1
+VeteranAbilities=STRONGER,FIREPOWER,ROF,SIGHT,FASTER
+EliteAbilities=SELF_HEAL,STRONGER,FIREPOWER,ROF
+AttackCursorOnFriendlies=yes
+MoveToShroud=no
+IFVMode=7
+Teleporter=yes;
 
 ;------------------------------------------------------------------------------
 ; Nod Bomber -- Pilgrim of Fire
@@ -308,8 +364,10 @@ DieSound			= ;CrazyIvanDie
 
 ;------------------------------------------------------------------------------
 ; Formerly NDBomber_3. 
-; Buildings only, and instantly absolutely destructive. Survives. 
-; This already has the upgrade "cloak permanent". 
+; - Target filter: Buildings only
+; - Attack not sacrifical (Survives.)
+; - Destructive instantly and absolutely. 
+; - Cloak permanent: This already has the upgrade "cloak permanent". 
 [Bomber_b2]:[Bomber_b]
 ;----- Name -----
 Name				= Pilgrim Bomber Elite
@@ -321,39 +379,6 @@ IFVMode				= BLAST_SURVIVOR					; Variant of DETONATOR where the user survives, 
 
 VeteranAbilities=STRONGER,FIREPOWER,ROF,SIGHT,FASTER,CLOAK	; we're puttin CLOAK to Vet for the reasons mentioned in the comment to the Stealth fighter's Veteran, so take a look there. 
 EliteAbilities=SELF_HEAL,STRONGER,FIREPOWER,ROF,CLOAK
-
-;------------------------------------------------------------------------------
-; RA2/YR's CIVAN (Chrono Ivan)
-[MadBomber_C]:[MadBomber]
-;----- Text -----
-UIName=Name:CIVAN
-Name=Chrono Ivan
-;----- Availability -----
-;RequiresStolenSovietTech=yes
-Crushable=no
-Strength=100
-TechLevel=9
-Pip=red
-Sight=8
-Speed=6
-Cost=1750
-Soylent=500
-Points=50
-;----- Sfx -----
-ChronoInSound=ChronoLegionTeleport
-ChronoOutSound=ChronoLegionTeleport
-Locomotor={4A582747-9839-11d1-B709-00A024DDAFD1}
-;Locomotor={4A582744-9839-11d1-B709-00A024DDAFD1}; <-Walk  teleport->{4A582747-9839-11d1-B709-00A024DDAFD1}
-PhysicalSize=1
-MovementZone=Infantry
-ThreatPosed=25	; This value MUST be 0 for all building addons
-SpecialThreatValue=1
-VeteranAbilities=STRONGER,FIREPOWER,ROF,SIGHT,FASTER
-EliteAbilities=SELF_HEAL,STRONGER,FIREPOWER,ROF
-AttackCursorOnFriendlies=yes
-MoveToShroud=no
-IFVMode=7
-Teleporter=yes;
 
 ;------------------------------------------------------------------------------
 ; Mad Bomber Hero
@@ -397,6 +422,10 @@ Disguised=yes	; the old way. We'll do it this way because we cannot have him use
 ; The evil Cuban Bomber
 ; (formerly Terrorist)
 ; Formerly Blaster_4. 
+; - Disguised
+; - Target filter: buildings
+; - Attack sacrifical
+; - Destructive absolute (C4)
 [Bomber_4]
 ;----- Name -----
 UIName				= Name:Bomber
