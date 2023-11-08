@@ -1,6 +1,9 @@
 ;******************************************************************************
 ;*** Yak-9 ********************************************************************
 ;******************************************************************************
+; Finally found a place for this: this should be available to Confederation, and Forgotten ("Looted Yak"). 
+; Elite drops napalm bombs. 
+; Corresponds to Argentine Batarito. 
 
 ;------------------------------------------------------------------------------
 [AircraftTypes]
@@ -10,20 +13,28 @@
 ; RA2 adaption of Yak from RA. Copied code with permission from The Third Power by Millennium. 
 ; prop attack plane 
 [Yak]
-;----- Name -----
+;----- Text -----
 UIName				= Name:Yak
 Name				= Yak
-
+;----- Taxonomy -----
+Category=AirPower 
+ConsideredAircraft=yes
+Fighter=yes 
+;----- Body -----
+Strength= 60
+;----- Weapons -----
 Primary=ChainGun 
 Secondary=ChainGun 
-Strength=60 
+ElitePrimary=StukaBomb 
+EliteSecondary=Gattling 
+;----- Armor -----
 Armor=light 
 TechLevel=5 
 Sight=0 
 Speed=16 
-
-;----- Procuration -----
-Owner				= Soviet,Russians,Belorussians,Ukrainians,Kazakhs,BlackGuards
+;----- Availability -----
+Owner				= Confederation,Brazilians,Cubans,Mexicans,Venezuelans
+TechLevel= 2; 5
 Prerequisite			= SUAirstrip
 Cost=800 
 Points=25 
@@ -34,16 +45,12 @@ GuardRange=30
 IsSelectableCombatant=yes 
 AllowedToStartInMultiplayer=no 
 
-; ai mechanics 
-Category=AirPower 
-ConsideredAircraft=yes 
+;----- AI -----
 ThreatPosed=15 
-
 ; characteristics of the tactical fighter 
-Fighter=yes 
 CanPassiveAquire=yes 
 CanRetaliate=yes 
-OpportunityFire=ywa 
+OpportunityFire=yes 
 Landable=yes 
 MoveToShroud=no	; property of soviet (prop) aircraft 
 Dock=AFLD,CAAIRP 
@@ -60,7 +67,8 @@ PitchAngle=0
 SlowdownDistance=0 
 ;i would like to modify the ROT setting, but it is given by the RA section... 
 
-; audio 
+;----- Sfx -----
+; audio
 VoiceSelect=GenSovVehicleSelect 
 VoiceMove=GenSovVehicleMove 
 VoiceAttack=GenSovVehicleAttackCommand 
@@ -80,8 +88,6 @@ MaxDebris=3
 ; I added these lines for ya. They would have been wasted in my mod, because that makes the Yak equal to the light fighters AND tactical bombers of the other sides, but since this isn't applicable for your mod, go ahead with those! 
 VeteranAbilities=STRONGER,FIREPOWER,SIGHT,FASTER 
 EliteAbilities=STRONGER,FIREPOWER,ROF 
-ElitePrimary=StukaBomb 
-EliteSecondary=Gattling 
 DeathWeapon=StukaBomb 
 
 ; immunity 
