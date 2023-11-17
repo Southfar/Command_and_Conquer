@@ -1,21 +1,3 @@
-; Upgrade No. 1 for Comm Center: Defense Control Node
-[EACommCenterUpgrade1]
-UIName				= Name:EGCommCenterUpgrade1
-Name				= Defense Control Node
-Prerequisite=EGCommCenter,EGTechCenter
-Prerequisite.Negative=EGCommCenterUpgrade1
-TechLevel=10
-Owner=Alliance,Chinese,Japanese,Koreans
-AIBasePlanningSide=4
-AIBuildThis=yes
-BuildCat=Combat
-Cost=750
-Points=30
-Power=-20
-PowersUpBuilding=EGCommCenter
-PowersUpToLevel=-1
-ThreatPosed=0	; This value MUST be 0 for all building addons
-IsThreatRatingNode=yes
 
 ; Upgrade No. 2 for Comm Center: Drone Control Node
 [EGCommCenterUpgrade2]
