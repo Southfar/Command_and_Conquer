@@ -1,4 +1,6 @@
-
+;******************************************************************************
+;*** Tank Kaos ****************************************************************
+;******************************************************************************
 ; A jigsaw tank with a short-ranged kaos cannon. 
 ; When Kaos Kannon konnects, it inflicts chaos damage. Kaos damage itself cannot be resisted, but will be converted to a random element. 
 ; It deals added damage to lawful creatures, but reduced damage against kaotic creatures. 
