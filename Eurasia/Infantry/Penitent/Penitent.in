@@ -1,0 +1,27 @@
+;******************************************************************************
+;*** Penitent *****************************************************************
+;******************************************************************************
+; Convict cyborgized/lobotomized; morale perfect (no will of their own), but can experience pain. 
+; Attacks clumsily with melee or spray-and-pray forward stumble. 
+
+;------------------------------------------------------------------------------
+[InfantryTypes]
++				= Penitent
+
+;------------------------------------------------------------------------------
+; The sad equivalent of an Attack Dog... 
+[Penitent]:[Convict]
+;----- Name -----
+UIName				= Name:Penitent
+Name				= Penitent
+;----- Taxonomy -----
+Cyborg				= yes
+Unnatural			= yes
+;----- Body -----
+Strength			= 150
+;----- Weapons -----
+Primary				= AgonyGun
+Secondary			= Club
+;----- Armor -----
+Armor				= plate, resist_poison_50
+ImmuneToPsionics		= yes
