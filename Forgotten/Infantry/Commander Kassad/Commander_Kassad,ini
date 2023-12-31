@@ -1,0 +1,71 @@
+;******************************************************************************
+;*** Commander Kassad *********************************************************
+;******************************************************************************
+; This is Prince Kassad. 
+; He is always perfectly stealthed, and cannot be uncovered even by sensors. 
+; Kassad spawns in the player's base. 
+; He has two attacks, both of which are map-wide: 
+; Once he spawns, he can "jump" to the location of any unit. 
+; If he jumps to an infantry, that infantry unit was Kassad all along. It becomes converted to Kassad. 
+; If he jumps to a vehicle, that vehicle was piloted by Kassad all along. It becomes converted to Kassad's side, 
+; and when destroyed, Kassad survives. 
+; Along with Kassad, several decoy Kassads spawn (like in the Ninja Master fight). 
+; They are Mujahid Elites with regular stealth. 
+; Kassad has a stealth aura, and can give friendly units permanent cloak. 
+
+;------------------------------------------------------------------------------
+[InfantryTypes]
++				= CommanderKassad
+
+;------------------------------------------------------------------------------
+; GLA Commander Prince Kassad
+[CommanderKassad]:[FNCommander]
+;----- Text -----
+UIName				= Name:commander_kassad
+Name				= Prince Kassad
+;----- Gfx -----
+Image				= none
+;----- Stealth -----
+Cloakable			= yes
+Invisible			= yes
+Inviso				= yes
+Disguised			= yes
+;----- Weapons -----
+Primary				= StealthJump
+Secondary			= StealthJumpAV
+
+Prerequisite=CNBRCK,JATECH
+PrerequisiteOverride=NACNST;CACHIN11
+Strength=125
+Primary=Colt45
+LeadershipRating=10
+Armor=none
+TechLevel=1;-1
+CrushSound=InfantrySquish
+Sight=2
+Speed=4
+Owner=ChineseTanks
+RequiredHouses=ChineseTanks
+AllowedToStartInMultiplayer=no
+Cost=1500
+Soylent=1000
+Points=100
+Nominal=yes
+Pip=blue
+VoiceSelect=GISelect
+VoiceMove=GIMove
+VoiceAttack=GIAttackCommand
+VoiceFeedback=GIFear
+VoiceSpecialAttack=GIMove
+DieSound=GIDie
+Locomotor={4A582744-9839-11d1-B709-00A024DDAFD1}
+PhysicalSize=1
+MovementZone=Infantry
+ThreatPosed=0	; This value MUST be 0 for all building addons
+ImmuneToVeins=yes
+Size=1
+IFVMode=0
+;Trainable=yes
+;Insignia.Rookie=pips6
+;Insignia.Veteran=pips7
+;Insignia.Elite=pips4
