@@ -10,76 +10,12 @@
 
 ;------------------------------------------------------------------------------
 [InfantryTypes]
-+= 
-
-
-
-;----- Body -----
-Strength				= 200;50
-
-
-;----- 
-Sight=2
-Speed=5
-Points=1
-;----- UI -----
-Pip= green
-;----- AI -----
-Fearless			= yes
-HasStupidGuardMode=yes
-GuardRange=20;6
-
-
-
-
-Explodes=yes
-Explosion=TBLAST
-Cyborg=yes
-Fearless=yes
-
-;----- Perception -----
-Sight=0;6
-
-;----- Scoring -----
-Points=1
-
-;----- SFX -----
-VoiceSelect=MummySelect
-VoiceMove=MummyMoveCommand
-VoiceAttack=GenInhumanScream
-DieSound=MummyDie
++				= 
 
 ;------------------------------------------------------------------------------
 ; Tiberium Zombie
-[TREEGUY]
-
-
-;----- Art -----
-PhysicalSize=1
-Image=ZOMB_U
-DeathAnims=VIRUSD
-Pip=green
-DamageParticleSystems=GasCloudSys
-OccupyPip=PersonGreen
-
-; AI
-ThreatPosed=0	; This value MUST be 0 for all building addons
-
-; Detection
-Sight=6
-DefaultToGuardArea=yes ; the much awaited dog default to move and attack when resting
-GuardRange=6
-
-
-
-; Controls
-Fearless=yes
-CloseRange=yes
-
-
-;------------------------------------------------------------------------------
 ; Infected in boxers
-; Formerly ZOMBIE (Zombie), ZombieA (Evil Zombie). 
+; Formerly TREEGUY, ZOMBIE (Zombie), ZombieA (Evil Zombie). 
 ; Tiberium Walker
 [TibWalker]:[Civilian]
 ;----- Text -----
@@ -89,46 +25,48 @@ Nominal				= yes
 UseOwnName			= yes
 ;----- Gfx -----
 Image=CIV3
+Image=ZOMB_U
 ;----- Taxonomy ------
-Category= 
+Category			= Soldier
 Zombie				= yes
-Civilian				= no
+Civilian			= no
 Unnatural			= yes		; Perfect - this prevents attack by roaming animals. Infected meat is not tasty...
 ;NotHuman			= yes		; Should use human death frames, but flameguy really wouldn't be suitable, since they lack self-preservation instincts. 
 ;----- Body -----
-Strength			= 400
+Strength			= 200
 ;SelfHealing			= yes		; No! These guys are not supposed to heal at all, even to the degree ordinary humans are able to heal injuries!
 ;----- Perception -----
-Sight				= 6
+Sight				= 6		; 2 ; 0
 ;----- AI -----
 Fearless			= yes
-DefaultToGuardArea		= yes 					; the much awaited dog default to move and attack when resting
-GuardRange			= 6
+DefaultToGuardArea		= yes 		; the much awaited dog default to move and attack when resting
+GuardRange			= 20		; 6
 Fearless			= yes
 ThreatPosed			= 5
-TastyToWorms			= TRUE					; Dune holdover!
-;----- Art -----
+TastyToWorms			= TRUE		; Dune holdover!
+CloseRange			= yes
+HasStupidGuardMode		= yes
+;----- UI -----
 Pip				= green
 OccupyPip			= PersonGreen
-PhysicalSize			= 1
 ;----- Weapons -----
 Primary				= ZombieBite
 CloseRange			= yes
 ;----- Armor -----
-Armor				= TibMutantSkin				; Absorb Tiberium radiation and bullets. Never take critical damage except from headshots. Takes damage from cure (but cured by stitch-up). 
-TiberiumProof			= yes					; Of course, these two...
-TiberiumHeal			= yes					; ...get ignored, but we'll say it anyway. 
-ImmuneToPsionics		= yes					; Debatable
+Armor				= TibMutantSkin	; Absorb Tiberium radiation and bullets. Never take critical damage except from headshots. Takes damage from cure (but cured by stitch-up). 
+TiberiumProof			= yes		; Of course, these two...
+TiberiumHeal			= yes		; ...get ignored, but we'll say it anyway. 
+ImmuneToPsionics		= yes		; Debatable
 ImmuneToPsionicWeapons		= no
 ImmuneToPoison			= yes
-;ImmuneToRadiation		= yes	; Taken out, absorbs. ; Hallmark
+;ImmuneToRadiation		= yes		; Taken out, absorbs. ; Hallmark
 ImmuneToVeins			= yes
 ;----- Availability -----
 Owner				= Special
 TechLevel			= -1
 Cost				= 100
 AllowedToStartInMultiplayer	= no
-CrateGoodie			= no					; Groups of zombies may emerge unowned from crates, but crates do not grant single zombies to players. 
+CrateGoodie			= no		; Groups of zombies may emerge unowned from crates, but crates do not grant single zombies to players. 
 ;----- Scoring -----
 Points				= 1
 ;----- Sound -----
@@ -152,8 +90,11 @@ Accelerates=yes
 SlowdownDistance=700
 DeaccelerationFactor		= 1.4					; Speeds up as it approaches its target. 
 Locomotor={4A582741-9839-11d1-B709-00A024DDAFD1} ; Driving locomotor - this might be necessary to make SlowdownDistance/Deacceleration work, not sure. Was {4A582744-9839-11d1-B709-00A024DDAFD1} (walking). 
-MovementZone=Infantry
-SpeedType=Foot
+;----- Damage & Destruction -----
+Explodes=yes
+Explosion=TBLAST
+DeathAnims=VIRUSD
+DamageParticleSystems=GasCloudSys
 ;----- Veterancy -----
 Trainable=no		; me no learn, me too stoopid
 
