@@ -1,21 +1,15 @@
 ;******************************************************************************
-;*** Infected Feral ***********************************************************
+;*** Tiberium Shambler ********************************************************
 ;******************************************************************************
+; This is the Tiberium Shambler, or Tiberium Walker (we haven't settled on a name yet). 
+; It is a feral tiberium mutant. 
 ; Infected type - differentiate from brainscorched and necromantic. 
+; These exist in the wild, but can also be trained by tibo-mutant factions. 
 ; Just like the Brainscorched, these are not literally 'dead', they are infected with a mutating agent that has affected their physiology and is controlling their actions or has reduced/altered their mind. 
 ; Because of their altered physiology, it does not matter that they are not actually undead - they gain numerous of the immunities and altered reactions of 'true' necromantic undead. 
 ; This is the base type. 
 ; There are other Ferals, but they have more advanced mutations. 
 ; E.g. the Brute version, and more complex and fantastic ones. 
-
-;------------------------------------------------------------------------------
-[InfantryTypes]
-+				= 
-;******************************************************************************
-;*** Shambler *****************************************************************
-;******************************************************************************
-; "Tiberium" Shambler
-; These exist in the wild, but can also be trained by tibo-mutant factions. 
 
 ;------------------------------------------------------------------------------
 [InfantryTypes]
