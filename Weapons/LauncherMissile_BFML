@@ -1,0 +1,66 @@
+;
+;
+;
+; Used by Mongoose, Binturong, Hellcat, IFV. 
+
+;------------------------------------------------------------------------------
+[WeaponTypes]
++				= LauncherMissileBFML
++				= LauncherMissileBFML2
++				= LauncherMissileBFML3
++				= LauncherMissileBFML4
+
+;------------------------------------------------------------------------------
+; HoverMissile (RA2)
+; Formerly IFVMissile. 
+; Subsumes TOWLauncherE (almost identical statistically), BFML (identical stats)
+[LauncherMissileBFML]
+Damage				= 25
+ROF				= 50
+Range				= 6
+Burst				= 2
+Projectile			= MissileBFM		; AAHeatSeeker2	; IFVRocketE ; IFVMissile
+Speed				= 40			; HE
+Warhead				= HE			; IFVRocketExplosion ; IFVWH3
+Report				= SeawolfAttack
+MinimumRange			= 1
+
+;------------------------------------------------------------------------------
+; Tank Rocket Launcher
+; Formerly RocketLauncher_5C19E. 
+[LauncherMissilexxx2
+ROF				= 40
+;Projectile			= AirToGroundMissile
+Warhead				= HE			; HEAT
+
+;------------------------------------------------------------------------------
+; Vehicle carried anti-tank missile
+; HoverMissileE (ra2/yr)
+; Subsumes BFML_E (identical stats). 
+[LauncherMissilexxx3
+Damage				= 40
+ROF				= 80
+Burst				= 4
+Projectile			= MissileBFME
+
+;------------------------------------------------------------------------------
+[RocketLauncher_BA4C9]:[RocketLauncher_5C19E]
+Damage				= 35
+ROF				= 50
+Projectile			= HeatSeeker4E	;AirToGroundMissile
+Warhead				= GUARDWH
+Burst				= 4
+Speed				= 40
+
+[BFML_AA]:[TankMslLauncher]
+Range				= 10
+Projectile			= AllHeatSeeker2
+TurboBoost			= yes
+Warhead				= SAMWH
+
+;Hover Missile - AA only
+[BFML_AA_E]:[BFML_AA]
+Projectile			= AllHeatSeeker2E
+
+
+
