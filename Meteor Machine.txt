@@ -1,4 +1,0 @@
-
-[XGMETR]
-UIName=Name:XGMETR
-Name=Meteor Storm Machine
