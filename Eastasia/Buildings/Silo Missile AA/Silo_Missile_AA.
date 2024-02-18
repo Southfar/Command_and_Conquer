@@ -1,0 +1,204 @@
+;******************************************************************************
+;*** Asian ICBM Silo **********************************************************
+;******************************************************************************
+
+;------------------------------------------------------------------------------
+[BuildingTypes]
++				= AASiloMissileTB
++				= AASiloMissileICB
+
+;------------------------------------------------------------------------------
+; Asian ICBM Silo
+; Formerly CNMSLO, AARocketSilo. 
+[AASiloMissile]
+;----- Name -----
+UIName				= Name:silo_missile
+Name				= Asian Missile Silo
+;----- UI -----
+BuildCat=Combat
+;----- Weapons -----
+SuperWeapon			= TitanRocketSpecial
+;----- Procuration -----
+Owner				= Alliance,Chinese,Japanese,Koreans,
+TechLevel			= 
+Prerequisite=AAConYard,AATechCenter
+
+Strength=1000
+Armor=concrete
+TechLevel=10
+Adjacent=2
+Sight=4
+AIBasePlanningSide=3
+Cost=5000
+Points=30
+Power=-200
+Crewed=yes
+Capturable=false
+Explosion=TWLT070,S_BANG48,S_BRNL58,S_CLSN58,S_TUMU60
+MaxDebris=15
+MinDebris=5
+DebrisAnim=Dbris3sm,Dbris4lg,Dbris4sm,Dbris6sm,Dbris7lg,Dbris7sm,Dbris8sm,Dbris9lg,Dbris10lg,Dbris10sm
+ThreatPosed=0 ; This value MUST be 0 for all building addons
+DamageParticleSystems=SparkSys,LGSparkSys
+SpecialThreatValue=1
+NukeSilo=yes
+Nominal=yes
+RevealToAll=yes
+HasStupidGuardMode=false
+Spyable=yes
+ChargedAnimTime=1  ;Number of minutes left at which weapon should switch to charged state  Geoff is god!
+DeathWeapon=NukePayload
+Explodes=Yes
+AIBuildThis=yes
+ProtectWithWall=yes
+BuildLimit=1
+DamageSelf=yes
+
+
+; Asian Tactical Ballistic Nuclear Missile Silo
+[AARocketSilo]:[SURocketSilo]
+AIBasePlanningSide=1 ;gs 0 for Good, 1 for Evil
+Cost=5000
+Points=30
+Power=-200
+Crewed=yes
+Capturable=false
+Explosion=TWLT070,S_BANG48,S_BRNL58,S_CLSN58,S_TUMU60
+MaxDebris=15
+MinDebris=5
+DebrisAnim=Dbris3sm,Dbris4lg,Dbris4sm,Dbris6sm,Dbris7lg,Dbris7sm,Dbris8sm,Dbris9lg,Dbris10lg,Dbris10sm
+ThreatPosed=0 ; This value MUST be 0 for all building addons
+DamageParticleSystems=SparkSys,LGSparkSys
+SpecialThreatValue=1
+NukeSilo=yes
+Nominal=yes
+RevealToAll=yes
+HasStupidGuardMode=false
+Spyable=yes
+ChargedAnimTime=1  ;Number of minutes left at which weapon should switch to charged state  Geoff is god!
+DeathWeapon=NukePayload2
+Explodes=Yes
+AIBuildThis=yes
+ProtectWithWall=yes
+BuildLimit=1
+DamageSelf=yes
+Ammo=1
+
+; Asian Tactical Nuclear Ballistic Missile Silo
+[AARocketSilo]:[SURocketSilo]
+;----- Name -----
+UIName				= Name:RocketSilo
+Name				= Asian Tactical Nuclear Missile Silo
+;----- UI -----
+BuildCat			= Combat
+;----- Weapons -----
+SuperWeapon			= EastwindRocketSpecial
+;----- Procuration -----
+Owner				= Alliance,Chinese,Japanese,Koreans,InfantryGeneral,CyberGeneral,WalkerGeneral,Room121,NinjaClan
+Prerequisite			= CNConYard,CNTechCenter
+Cost= 5000
+;----- Base Attributes -----
+Strength			= 4000
+Armor=concrete
+TechLevel=10
+Adjacent=2
+Sight=4
+AIBasePlanningSide=3
+Points=30
+Power=-200
+Crewed=yes
+Capturable=false
+
+;----- Damage & Destruction -----
+DeathWeapon			= DongfengRocketPayload
+Explodes			= yes
+Explosion=TWLT070,S_BANG48,S_BRNL58,S_CLSN58,S_TUMU60
+MaxDebris=15
+MinDebris=5
+DebrisAnim=Dbris3sm,Dbris4lg,Dbris4sm,Dbris6sm,Dbris7lg,Dbris7sm,Dbris8sm,Dbris9lg,Dbris10lg,Dbris10sm
+ThreatPosed=0 ; This value MUST be 0 for all building addons
+DamageParticleSystems=SparkSys,LGSparkSys
+SpecialThreatValue=1
+Nominal=yes
+RevealToAll=yes
+HasStupidGuardMode=false
+Spyable=yes
+ChargedAnimTime=1  ;Number of minutes left at which weapon should switch to charged state  Geoff is god!
+AIBuildThis=yes
+ProtectWithWall=yes
+BuildLimit=1
+DamageSelf=yes
+
+;----- Load -----
+Ammo				= 1
+
+Armor=concrete
+TechLevel=10
+Adjacent=2
+Sight=4
+Points=30
+Power=-200
+Crewed=yes
+Capturable=false
+Explosion=TWLT070,S_BANG48,S_BRNL58,S_CLSN58,S_TUMU60
+MaxDebris=15
+MinDebris=5
+DebrisAnim=Dbris3sm,Dbris4lg,Dbris4sm,Dbris6sm,Dbris7lg,Dbris7sm,Dbris8sm,Dbris9lg,Dbris10lg,Dbris10sm
+ThreatPosed=0 ; This value MUST be 0 for all building addons
+DamageParticleSystems=SparkSys,LGSparkSys
+SpecialThreatValue=1
+NukeSilo=yes
+Nominal=yes
+RevealToAll=yes
+HasStupidGuardMode=false
+Spyable=yes
+ChargedAnimTime=1  ;Number of minutes left at which weapon should switch to charged state  Geoff is god!
+DeathWeapon=NukePayload
+Explodes=Yes
+AIBuildThis=yes
+ProtectWithWall=yes
+BuildLimit=1
+DamageSelf=yes
+Ammo=1
+
+
+; Chinese Nuclear Missile - Special case
+[CNMSLO]
+UIName=Name:NAMISL
+Name=Chinese Nuclear Missile Silo
+Image=CACHIN01
+BuildCat=Combat
+SuperWeapon=NukeSpecial2
+Prerequisite=NATECH,NACNST
+Strength=1000
+Armor=concrete
+TechLevel=10
+Adjacent=2
+Sight=4
+Owner=British,French,Germans,Americans,Alliance,Russians,Confederation,Africans,Arabs,YuriCountry
+AIBasePlanningSide=1 ;gs 0 for Good, 1 for Evil
+Cost=5000
+Points=30
+Power=-200
+Crewed=yes
+Capturable=false
+Explosion=TWLT070,S_BANG48,S_BRNL58,S_CLSN58,S_TUMU60
+MaxDebris=15
+MinDebris=5
+DebrisAnim=Dbris3sm,Dbris4lg,Dbris4sm,Dbris6sm,Dbris7lg,Dbris7sm,Dbris8sm,Dbris9lg,Dbris10lg,Dbris10sm
+ThreatPosed=0 ; This value MUST be 0 for all building addons
+DamageParticleSystems=SparkSys,LGSparkSys
+SpecialThreatValue=1
+NukeSilo=yes
+Nominal=yes
+RevealToAll=yes
+HasStupidGuardMode=false
+Spyable=yes
+ChargedAnimTime=1  ;Number of minutes left at which weapon should switch to charged state  Geoff is god!
+DeathWeapon=NukePayload2
+Explodes=Yes
+AIBuildThis=yes
+ProtectWithWall=yes
+BuildLimit=1
+DamageSelf=yes
+Ammo=1
