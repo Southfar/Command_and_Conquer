@@ -1,5 +1,41 @@
 
 
+;------------------------------------------------------------------------------
+[Warheads]
++                                = 
+
+;------------------------------------------------------------------------------
+; Autocannon VS air only
+; ANTIAIR_W (ebfd)
+; Formerly AAGunWH. 
+[AntiAirGunWH]
+;----- Splash -----
+CellSpread			= 1
+PercentAtMax			= .4
+
+;----- Damage Ratios -----
+Verses				= 150%,80%,50%,100%,60%,20%,0%,0%,0%,100%,100%
+Versus.None			= 30%
+Versus.Earplugs			= 20%
+Versus.BPV			= 15%
+Versus.Light			= 65%
+Versus.Medium			= 70%
+Versus.Heavy			= 80%
+Versus.Concrete			= 100%
+Versus.Wall			= 75%
+Versus.Building			= 15%
+Versus.ConYard			= 15%
+Versus.Harvester		= 20%
+Versus.Aircraft			= 100%
+
+;----- GFX -----
+;AnimList			= S_BANG34
+InfDeath			= 3
+
+;----- Lighting -----
+Bright				= yes
+Bullets				= yes
+
 
 ; Harkonnen Missilier
 ; HKTrooper (EBFD)
