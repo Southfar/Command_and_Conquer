@@ -11,6 +11,20 @@
 +				= LauncherMissileBFML4
 
 ;------------------------------------------------------------------------------
+; Hover Missile (TS)
+; Formerly RocketLauncher_6D814. 
+[LauncherMissileBF]
+Damage				= 30				; From TS. Was 25 (uncertain genesis). 
+ROF				= 68
+Range				= 8				; From TS. Was 6 (uncertain genesis). 
+Burst				= 2				; 4 ; 2
+Projectile			= AAHeatSeeker2;Rocket_2155F4BD273C3
+Speed				= 30
+Warhead				= AP
+Report				= HOVRMIS1
+MinimumRange			= 2
+
+;------------------------------------------------------------------------------
 ; HoverMissile (RA2)
 ; Formerly IFVMissile. 
 ; Subsumes TOWLauncherE (almost identical statistically), BFML (identical stats)
@@ -23,6 +37,17 @@ Projectile			= MissileBFM		; AAHeatSeeker2	; IFVRocketE ; IFVMissile
 Speed				= 40			; HE
 Warhead				= HE			; IFVRocketExplosion ; IFVWH3
 Report				= SeawolfAttack
+MinimumRange			= 1
+
+;------------------------------------------------------------------------------
+;Hover Missile
+[RocketLauncher_17EB3]:[RocketLauncher_6D814]
+Damage				= 30
+ROF				= 50
+Range				= 8
+Burst				= 4
+Projectile			= Rocket_44ACEAA285BAA
+Speed				= 40
 MinimumRange			= 1
 
 ;------------------------------------------------------------------------------
