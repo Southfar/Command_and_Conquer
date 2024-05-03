@@ -2,7 +2,9 @@
 ;*** Halftrack Truck **********************************************************
 ;******************************************************************************
 ; The heavy halftrack. It can load any weapons that can also fit on the Pickup, but that's not efficient. 
-; It can equip Quad Cannon and rocket launchers. 
+; It can equip Quad Cannon, cannon, howitzer, mortar, rocket launchers. 
+; This unit can upgrade from the Mortar Truck (Vietnam has access to this unit). 
+; But Quad Cannon, howitzer, cannon cannot be used from the truck unless it has the HT upgrade. 
 
 ;------------------------------------------------------------------------------
 [VehicleTypes]
@@ -17,9 +19,9 @@
 Object Halftruck
 [Halftruck]:[SUTruck]
 ;----- Name -----
-UIName				= Name:TRUCKA
 Name				= Halftrack Truck
-
+UIName				= name:
+UIDescription			= desc:
 ;----- Procuration -----
 Prerequisite			= ABAN03
 
