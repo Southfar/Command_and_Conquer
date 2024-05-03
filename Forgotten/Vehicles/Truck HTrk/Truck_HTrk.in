@@ -16,24 +16,22 @@
 ;------------------------------------------------------------------------------
 ; Heavy Halftrack
 ; Gen/ZH's GLAVehicleQuadCannon
-Object Halftruck
-[Halftruck]:[SUTruck]
+; Formerly "Halftruck". 
+Object TruckHTrk
+[TrukHTrk]:[SUTruk]
 ;----- Name -----
 Name				= Halftrack Truck
-UIName				= name:
-UIDescription			= desc:
+UIName				= name:truk_htrk
+UIDescription			= desc:truk_htrk
 ;----- Procuration -----
 Prerequisite			= ABAN03
-
 ;----- GFX -----
-
-    OkToChangeModelColor = Yes
-
-;----- Base Attributes -----
-Body = ActiveBody ModuleTag_02
-MaxHealth				= 300.0
+OkToChangeModelColor		= Yes
+;----- Body -----
+Body				= ActiveBody ModuleTag_02
+MaxHealth			= 300.0
 InitialHealth			= 300.0
-Strength				= 300
+Strength			= 300
 
 ;----- Armor -----
 Armor=light
@@ -428,9 +426,18 @@ SizeLimit=3
 PipScale=Passengers
 
 ;------------------------------------------------------------------------------
+; Mortar Truck (Halftrack Upgrade)
+; Formerly "TrukHtkMortar". 
+[TrukHTrkMortar]:[TrukHTrkMortar]
+;----- Text -----
+Name				= Truck Halftrack Mortar
+;----- Weapons -----
+Primary				= MortarVeh
+ElitePrimary			= MortarVeh
+
+;------------------------------------------------------------------------------
 ; Missile artillery
 [RocketLauncherHalftruck]
-UIName=NOSTR:Hwacha;Name:MLRS
 Name=Rocket Launcher Halftrack Truck
 
 Primary=FireworkLauncher
