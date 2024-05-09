@@ -1,0 +1,67 @@
+;
+;
+;
+
+;------------------------------------------------------------------------------
+[AircraftTypes]
++				= 
+
+;------------------------------------------------------------------------------
+; Dragonfly
+; HVRE (Eagle Red)
+[DroneDragonfly]
+;----- Text -----
+Name				= Asian Dragonfly
+UIName				= Name:HVRE
+
+Image=DRGF
+Prerequisite=AAWEAP
+Primary=DragonflyWeapon
+Strength=125
+Category=Recon
+Armor=heavy
+Turret=no
+IsTilter=yes
+Crusher=no
+TooBigToFitUnderBridge=true
+TechLevel=4
+Sight=10
+Speed=10 
+DeployTime=.022
+PipScale=Passengers
+Passengers=1
+OpenTopped=yes ;passengers can shoot out
+SizeLimit=1
+CrateGoodie=no
+Owner=YuriCountry,Alliance,Confederation
+Cost=600
+Soylent=600
+Points=25
+ROT=8
+IsSelectableCombatant=yes
+Explosion=TWLT070,S_BANG48,S_BRNL58,S_CLSN58,S_TUMU60
+VoiceSelect=RobotTankSelect
+VoiceSelectDeactivated=RobotTankSelectDeactivated
+VoiceMove=RobotTankMove
+VoiceAttack=RobotTankAttackCommand
+VoiceFeedback=
+DieSound=RobotTankDie
+MoveSound=RobotTankMoveStart
+CrushSound=TankCrush
+MaxDebris=2
+SpeedType=Hover
+Locomotor={4A582742-9839-11d1-B709-00A024DDAFD1}
+MovementZone=AmphibiousDestroyer 
+ThreatPosed=15	; This value MUST be 0 for all building addons
+DamageParticleSystems=SparkSys,SmallGreySSys
+VeteranAbilities=STRONGER,FIREPOWER,SIGHT,FASTER
+EliteAbilities=SELF_HEAL,STRONGER,FIREPOWER,ROF
+Accelerates=false
+Size=3
+EnterTransportSound=EnterTransport
+LeaveTransportSound=ExitTransport
+OpportunityFire=yes
+AllowedToStartInMultiplayer=no
+ImmuneToPsionics=no
+ImmuneToRadiation=yes
+Trainable=no
