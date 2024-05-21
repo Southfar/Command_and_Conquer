@@ -181,26 +181,7 @@ UIName=Name:XenoHexapod
 Name=Hexapod
 ;Primary=HexapodMeteor
 
-********************
-*** Mothership *****
-********************
-- Called by SW. Bombards area for a while before retreating. 
-- Protected by massive force fields. Can be made to retreat by depleting shields. 
 
-; Alien Frigate
-[XenoMothership]
-UIName=Name:XenoMothership
-Name=Mothership
-Primary=MothershipMeteors
-Secondary=MothershipLasers
-Armor=MothershipArmor
-SelfHealing=yes			; while shield is up, regen is cancelled. 
-DamagedSound=ShieldDeflect
-AttachEffect.Animation=MothershipShieldFX
-AttachEffect.Duration=600
-AttachEffect.Delay=200
-AttachEffect.ArmorMultiplier=999999	; virtually immune while shields are up
-Strength=50000
 
 [XenoMeteorTower]
 
