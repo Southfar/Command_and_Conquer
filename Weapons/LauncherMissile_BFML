@@ -87,5 +87,61 @@ Warhead				= SAMWH
 [BFML_AA_E]:[BFML_AA]
 Projectile			= AllHeatSeeker2E
 
+;Hover Missile 3
+[StingrayRocketLauncher]
+Damage				= 40
+ROF				= 90
+Range				= 7.5
+Burst				= 10;11;2
+Projectile			= StingrayRocket
+Speed				= 30
+Warhead				= StingrayRocketWH
+Report				= PatriotAttack
+MinimumRange			= 1
+Anim				= V3TAKOFF
 
+[StingrayRocketLauncherE]:[StingrayRocketLauncher]
+Damage=50
+ROF=85
+;Burst=3
+Range=8.5
+Speed=40
+
+[StingrayRocketLauncherC]
+ROF=50
+Range=9
+
+[StingrayRocketLauncher]
+Damage=160
+Range=11
+
+[StingrayRocket]
+;Arcing				= true
+Arm				= 251;700;100
+Inaccurate			= yes
+Proximity			= yes
+ROT				= 2;3;4;8;10
+Image				= MISSILE;PATRIOT;MISL2
+High				= yes
+SubjectToWalls			= no
+SubjectToCliffs			= yes
+SubjectToElevation		= yes
+
+[StingrayRocketWH]
+Spread=4
+Wall=yes
+Wood=yes
+Conventional=yes
+Rocker				= yes
+InfDeath			= 2
+AnimList			= 
+Deform=10%
+DeformThreshhold=300
+Tiberium=yes
+;Sparky=yes
+Bright=yes
+ProneDamage=70%     ; Presumes air burst
+;CellSpread=2
+;PercentAtMax=1
+Verses				= 100%,100%,100%,85%,60%,35%,70%,28%,10%,0%,0%
 
