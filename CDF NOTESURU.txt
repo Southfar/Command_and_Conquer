@@ -1,6 +1,3 @@
-
-
-
 ; [Footsoldier]	[Grenadier]
 ; [Firelancer]	[Mortar]
 ; [Flamethrower]
@@ -9,6 +6,46 @@
 ; [Shikari]	[Alita]
 
 
+
+[StasisWH]
+Shield.AttachTypes			= BubbleStasis
+
+[BubbleStasis]
+Strength				= 1000			; Can be anything. Coordinate with SelfHealing to get at duration. 
+InitialStrength				= 1000
+Armor					= Invulnerable		; Not targetable by anything. 
+InheritArmorFromTechno			= false
+Powered					= false
+AbsorbOverDamage			= false
+SelfHealing				= -5
+SelfHealing.Rate			= 0.1
+SelfHealing.RestartInCombat		= true
+SelfHealing.RestartInCombatDelay	= 0
+Respawn					= 0.0
+Respawn.Rate				= 0.0
+BracketDelta				= -9999
+Pips					= -1,-1,-1                               ; integer, frames of pips.shp (zero-based) for Green, Yellow, Red
+Pips.Building				= -1,-1,-1                      ; integer, frames of pips.shp (zero-based) for Green, Yellow, Red
+Pips.Background				= inviso
+Pips.Building.Empty			= inviso
+IdleAnim				= stasis
+IdleAnim.ConditionYellow		= stasis
+IdleAnim.ConditionRed			= stasis
+IdleAnimDamaged				= stasis
+IdleAnimDamaged.ConditionYellow		= stasis
+IdleAnimDamaged.ConditionRed		= stasis
+IdleAnim.OfflineAction			= None
+IdleAnim.TemporalAction			= None
+BreakAnim				= inviso
+HitAnim					= inviso
+BreakWeapon				= none
+AbsorbPercent				= 1.0
+PassPercent				= 0.0
+ReceivedDamage.Minimum=-2147483648          ; integer
+ReceivedDamage.Maximum=2147483647           ; integer
+AllowTransfer=                              ; boolean
+ImmuneToBerserk=no                          ; boolean
+ImmuneToCrit=no                             ; boolean
 
 
 
