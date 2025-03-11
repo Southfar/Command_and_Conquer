@@ -183,59 +183,6 @@ What warrants a prefix?
 Mono Beetle, Gun Beetle, Rocket Beetle, Bomb Beetle, Spark Beetle, Spring Beetle, Gold Beetle, Gun Wing, Bomb Wing, Gun Hunter, Laser Hunter, Shield Hunter, Rhino Jet, Rhino Cannon, Rhino Spike, Rhino Metall, Rhino Spring, Mono Hawk, Gun Hawk, Laser Hawk, Sky Hawk, Bomb Hawk
 
 
-[DESTRO]
-Name=Cyborg Destroyer
-Category=Soldier
-Prerequisite=NAHAND,NATECH
-Primary=CyCannonII
-Secondary=FireballLauncher
-CrushSound=SQUISHY2
-Crushable=no
-TiberiumProof=yes
-TiberiumHeal=yes
-Fearless=yes
-Pip=white
-Strength=200 ; w350
-Armor=light
-TechLevel=4
-Sight=10
-Speed=4
-Owner=Nod
-Cost=1500
-Points=5
-VoiceSelect=22-I000,22-I002,22-I006
-VoiceMove=22-I008,22-I010,22-I014,22-I016,22-I020
-VoiceAttack=22-I008,22-I010,22-I012,22-I018
-VoiceFeedback=
-VoiceDie=DEDMAN1,DEDMAN2,DEDMAN2,DEDMAN4,DEDMAN5,DEDMAN6
-Locomotor={4A582744-9839-11d1-B709-00A024DDAFD1}
-PhysicalSize=1
-MovementZone=Infantry
-DamageParticleSystems=SparkSys
-ThreatPosed=15	; This value MUST be 0 for all building addons
-EliteAbilities=STRONGER
-BuildLimit=3
-ImmuneToVeins=yes
-
-;Cyborg Commando Plasma Cannon
-[CyCannon]
-Damage=120
-ROF=50
-Range=7
-Projectile=ProtonBlast
-Speed=70
-Warhead=PlasmaWH
-Report=scrin5b
-
-;Cyborg Commando Plasma Cannon
-[CyCannonII]
-Damage=200
-ROF=300
-Range=8
-Projectile=ProtonBlast
-Speed=70
-Warhead=PlasmaWH
-Report=scrin5b
 
 Titan MKII: Red Chem Missile with TWLT100 explosion
 
