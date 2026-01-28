@@ -10,6 +10,15 @@
 +				= LauncherMissileBFML3
 +				= LauncherMissileBFML4
 
+;******************************************************************************
+;*** Launcher SAM Roland ******************************************************
+;******************************************************************************
+
+;------------------------------------------------------------------------------
+[WeaponTypes]
++				= LauncherRoland
++				= LauncherRoland_e3
+
 ;------------------------------------------------------------------------------
 ; Hover Missile (TS)
 ; Formerly RocketLauncher_6D814. 
@@ -40,6 +49,21 @@ Report				= SeawolfAttack
 MinimumRange			= 1
 
 ;------------------------------------------------------------------------------
+; Created by StrategicCommander. 
+; HoverMissile2
+; Formerly [LauncherRoland]. 
+[LauncherMissileBFML
+Damage=20
+ROF=68
+Range=8
+Burst=4
+Projectile=AAHeatSeeker2
+Speed=30
+Warhead=AP
+Report=HOVRMIS1
+MinimumRange=2
+
+;------------------------------------------------------------------------------
 ;Hover Missile
 [RocketLauncher_17EB3]:[RocketLauncher_6D814]
 Damage				= 30
@@ -57,6 +81,14 @@ MinimumRange			= 1
 ROF				= 40
 ;Projectile			= AirToGroundMissile
 Warhead				= HE			; HEAT
+
+
+;------------------------------------------------------------------------------
+[LauncherRoland_e3]:[LauncherRoland]
+ROF=40
+Range=10
+Burst				= 6;16
+Speed=65;50
 
 ;------------------------------------------------------------------------------
 ; Vehicle carried anti-tank missile
