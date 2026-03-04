@@ -1,0 +1,56 @@
+Before you edit the rules.ini you should have
+1.put the art.ini code in the art.ini
+2.put the blood,scdeath,etc. into your ecache mix file(use the xcc mixer
+  to do this)
+
+---------------------------------------now the rules ini stuff
+
+-replace the old deadbodies=blah blah code with this code
+
+DeadBodies=SCDEATH,SCDEATHB,SCDEATHC,SCDEATHD,SCDEATHE,SCDEATHF 
+
+-then add the following animations to your animation list
+
+xxx=SCDEATH
+xxx=SCDEATHB
+xxx=SCDEATHC
+xxx=SCDEATHD
+xxx=SCDEATHE
+xxx=SCDEATHF
+
+-now put the following weapon in the weapon section of the ini
+
+[TerrorBomb2]
+Projectile=Invisible
+Damage=5
+Warhead=TerrorBombWH2
+Anim=RING1
+Range=1.5
+ROF=10
+Suicide=yes
+
+-and add it's warhead to the warhead section
+
+[TerrorBombWH2]
+Verses=1%,1%,1%,1%,1%,1%,1%,1%,1%,1%,1%
+Sparky=no
+Fire=yes
+InfDeath=6
+CellSpread=2
+PercentAtMax=.5 
+Bright=yes
+AnimList=BLOOD
+
+-now just add the following 2 lines of ini code to every single 
+ infantry/creature in the game(yes even the polar bears and monkey's)
+
+Explodes=yes
+DeathWeapon=TerrorBomb2
+
+-there you go...have fun :) the best way to test it to see if it works
+ is to build a bunch of regular infantry...then have one of your dogs
+ attack your men...if you see blood explode when they die you did every
+ thing right...if not,then re-read this file and see where you screwed
+ up
+
+                  -smurfbizkit    smurfbizkit@email.com icq=46369595
