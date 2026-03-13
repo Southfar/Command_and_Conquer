@@ -1,0 +1,91 @@
+Butcher v1.6
+By:  Matt Przybylski (a.k.a. kastro)
+	kastro3d@home.com
+	http://www.tiberiansun.net.nz
+	http://www.hukhuk.com/ts.html
+Last Modified:  9-19-99
+Thanks goes out to everyone, I just hope you enjoy this.
+
+-----------------------------------------------------------------------------------------
+
+Installation:
+Simply unzip butcherv16.zip into your C:\Westwood\Sun directory, or the directory where Tiberian Sun is located.  
+
+Files:
+zip file:  butcherv16.zip
+Read Me:  butcher v16.txt
+.ini:  Rules.ini
+
+This is probably the last version because of all the new mods coming out that are so much better than this one, but if someone wants me to keep on doing it then please mail me and tell me what you think.  :O)
+
+-----------------------------------------------------------------------------------------
+
+Contact Info
+To report a bug, give me a suggestion/comment/criticize me, e-mail me at kastro3d@home.com.  All mail is welcome, good or not.
+
+-----------------------------------------------------------------------------------------
+
+* = New in v1.6
+
+
+NOD Units
+
+-*Grenadier:  A sound grenade thrower for the NOD.
+-*V6 Raider:  A Cyborg with a 155mm Artillery Cannon.
+-*Speed Engineer:  The fastest engineer prototype available.
+-Sub Kill APC:  Subterranean APC with hover missiles
+-Advanced Weed Eater:  Weed Eater with a tick tank gun
+-Made Medic available for NOD use
+-Ghost Hunter:  A GDI Ghost Stalker that costs more and has a 90mm as a secondary weapon
+-NOD Stinger:  A modified Orca Fighter; primary weapon same as banshee, secondary weapon is the Orca Fighter's Hellfire.
+
+NOD Structures
+
+-*Fixed Repair Site bug which made it not show up in sidebar.
+-*NOD Hospital:  A hospital to heal all infantry.
+-*Cannon Yard:  Required to build infantry with cannons.
+-*Speed Generator:  Needed to build Speed Engineers and other speed units.
+-Repair Site:  Much like the GDI Service Depot but costs 800 more because it is hard to come by in NOD infested areas.
+
+
+GDI Units
+
+-*Haymaker:  A fearsome unit with a cloak and biker missiles.
+-*GDI Jacker:  A cheaper Hijacker but also has less power and is a little slower.
+-*MSD 193 Unit:  A fearless misleading civilian that is cloakable.
+-*Made Mammoth Tank available for use.
+-*Survivor:  A cloakable killing machine with a Cyborg Commando Cannon.
+-Amp Kill APC:  Amphibious APC with hover missiles
+-Made Cyborg available for GDI use
+-Kamikaze:  A civilian that explodes upon killing him, hopefully taking out a few things around him
+-CC Counter:  A counter to the NOD Cyborg Commando, includes a 90mm as a secondary weapon
+-Hoser:  The fastest air unit with two weapons and a build limit of 5.
+
+GDI Structures
+
+-*Power Temple:  Adds an enormous amount of power to your base but is very costly.
+-*Cloak Depot:  Building needed for cloak infantry units.
+-Yellow Light Posts:  Naturally, this gives light for night battles and is equipped with a Vulcan Cannon.
+
+
+Added To Both Sides
+
+Units:
+-*Jumpjet Fireman:  A Jumpjet Infantry with the Devil's Tongue Fireball Launcher.
+-*Rifleman:  An Infantry unit equipped with the M1Carbine Rifle.
+-*Laser Infantry:  Costs 1800 and has Laser Turret lasers as primary weapon.
+-Bridge Repair:  Engineer that costs less and is weaker; used to repair bridges, but can be used as an engineer also.
+
+
+Structures:
+-Observation Tower:  Standard tower equipped with SAM missiles
+
+
+
+
+
+ENJOY!!!
+-Matt Przybylski
+kastro3d@home.com
+http://www.tiberiansun.net.nz
+http://www.hukhuk.com/ts.html
